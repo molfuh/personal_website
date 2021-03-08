@@ -62,12 +62,11 @@ const PopUp = styled.div`
   font-weight: normal;
   font-size: 1.4vw;
   opacity: 0;
-  top: 22.5vh;
+  top: 32vh;
   left: 21.5vw;
   background-color: transparent;
   color: yellowgreen;
   animation: ${props => props.emailPop && css`${visibility} ease-in 1s` };
-  /* top: 0; */
 `;
 
 const StyledContainer = styled.div`
