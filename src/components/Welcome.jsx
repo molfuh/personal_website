@@ -39,6 +39,7 @@ export default function Welcome() {
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
       </Greeting>
       <HelloType>
+      <Num>7</Num>
         <ReactTypingEffect
           text={["Hello!"]}
           speed={[160]}
@@ -46,6 +47,32 @@ export default function Welcome() {
           eraseDelay={[1500]}
         />
       </HelloType>
+      <Introduction>
+        <Num>8</Num>
+        <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
+          Introduction
+        <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
+        <Text><Num>9</Num>My name is Molly Fuhrman</Text>
+        <Num>10</Num><EmptyOpenBrackets>{`</`}</EmptyOpenBrackets>
+          Introduction
+        <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
+      </Introduction>
+      <Bio>
+        <Num>11</Num>
+        <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
+          Bio
+        <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
+        <Text><Num>12</Num>I'm a full-stack software engineer.</Text>
+        <Num>13</Num><EmptyOpenBrackets>{`</`}</EmptyOpenBrackets>
+          Bio
+        <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
+      </Bio>
+      <Greeting>
+        <Num>6</Num>
+        <EmptyOpenBrackets>{`</`}</EmptyOpenBrackets>
+        Greeting
+        <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
+      </Greeting>
       {/* <StyledGif> */}
         {/* <StyledEmailPopUp active={emailPop}>
         </StyledEmailPopUp> */}
@@ -116,6 +143,13 @@ const HelloType = styled.div`
   position: relative;
   color: white;
 `;
+
+const Text = styled(HelloType)``;
+
+const Introduction = styled(Greeting)`
+`;
+
+const Bio = styled(Greeting)``;
 
 // const StyledEmailPopUp = styled.div`
 //   /* position: absolute; */
