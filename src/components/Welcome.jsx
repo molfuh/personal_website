@@ -1,20 +1,11 @@
 import styled, { css, keyframes } from 'styled-components';
 import { useState } from 'react';
-// import {
-//     BrowserRouter as Router,
-//     Switch,
-//     Route,
-//     Link
-//   } from "react-router-dom";
-//   import Contact from './Contact.jsx'
-  
 
 export default function Welcome({ gif }) {
   const [emailPop, useEmailPop] = useState(false);
 
   const HandleEmail = () => {
     navigator.clipboard.writeText('mollyfuhrman@gmail.com');
-    // useEmailPop(true);
     useEmailPop(!emailPop);
 }
 
@@ -24,7 +15,6 @@ export default function Welcome({ gif }) {
       <StyledGif gif={gif}>
         <Email onClick={() => HandleEmail()}>mollyfuhrman@gmail.com</Email>
         <StyledEmailPopUp active={emailPop} />
-        {/* was going to do && trick here to render "clicked!" popup */}
         {emailPop && <PopUp emailPop={emailPop}>
           Copied to clipboard!    
         </PopUp>}
@@ -60,7 +50,6 @@ const PopUp = styled.div`
   height: 10%;
   width: 30%;
   position: absolute;
-  /* background-color: ${props => props.emailPop && 'white' }; */
   background-color: transparent;
   color: yellowgreen;
   animation: ${props => props.emailPop && css`${visibility} ease-in 0.5s` };
@@ -98,7 +87,6 @@ const Email = styled.div`
   :hover {
       color: blue;
       cursor: pointer;
-
   }
 `;
 
