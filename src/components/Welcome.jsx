@@ -14,14 +14,15 @@ export default function Welcome({ gif }) {
       <StyledContainer />
       <Title>// Molly Fuhrman - Web Developer</Title>
       <StyledGif gif={gif}>
-        <Email onClick={() => HandleEmail()}>mollyfuhrman@gmail.com</Email>
-        <StyledEmailPopUp active={emailPop} />
+        {/* <StyledEmailPopUp active={emailPop}>
+        </StyledEmailPopUp> */}
         {emailPop && <PopUp emailPop={emailPop}>
           Copied to clipboard!    
         </PopUp>}
+        <Email onClick={() => HandleEmail()}>mollyfuhrman@gmail.com</Email>
         <GitHub href="https://github.com/molfuh" target="_blank">molfuh</GitHub>
         <LinkedIn href="https://www.linkedin.com/in/molly-fuhrman/" target="_blank">molly-fuhrman</LinkedIn>
-        <ContactInfo>
+        <Projects>
             <Brackets>
             {`<`}
             </Brackets>
@@ -29,7 +30,7 @@ export default function Welcome({ gif }) {
             <Brackets>
             {` />`}
             </Brackets>
-        </ContactInfo>
+        </Projects>
       </StyledGif>
     </>
   );
@@ -40,13 +41,14 @@ const Title = styled.span`
   color: white;
   font-family: 'Menlo Regular';
   font-weight: normal;
-  font-size: 40px;
+  font-size: 3vw;
   left: 40px;
-  top: 20px;
+  top: 5vh;
 `;
 
-const StyledEmailPopUp = styled.div`
-`;
+// const StyledEmailPopUp = styled.div`
+//   /* position: absolute; */
+// `;
 
 const visibility = keyframes`
   0% {opacity: 0}
@@ -55,17 +57,17 @@ const visibility = keyframes`
 `;
 
 const PopUp = styled.div`
+  position: absolute;
   font-family: 'Menlo Regular';
   font-weight: normal;
+  font-size: 1.4vw;
   opacity: 0;
-  height: 10%;
-  width: 30%;
-  position: absolute;
+  top: 22.5vh;
+  left: 21.5vw;
   background-color: transparent;
   color: yellowgreen;
   animation: ${props => props.emailPop && css`${visibility} ease-in 1s` };
-  left: 30%;
-  top: 50%;
+  /* top: 0; */
 `;
 
 const StyledContainer = styled.div`
@@ -76,13 +78,14 @@ const StyledContainer = styled.div`
 `;
 
 const StyledGif = styled.div`
-  background-color: black;
+  background-color: #1b181b;
   background-image: url(${ props => props.gif });
   position: absolute;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 80vh;
-  width: 80vw;
-  top: 50%;
+  width: 75vw;
+  top: 55%;
   transform: translate(0, -50%);
 `;
 
@@ -90,42 +93,81 @@ const Email = styled.div`
   position: relative;
   color: white;
   margin-left: 29%;
-  margin-top: 29.5%;
+  margin-top: 26%;
   font-family: 'Menlo Regular';
   font-weight: normal;
-  font-size: 22px;
-  width: 20px;
+  font-size: 1.5vw;
+  left: -1.5vw;
   :hover {
       color: blue;
       cursor: pointer;
   }
 `;
 
-const GitHub = styled.a`
+const GitHub = styled.span`
   position: relative;
+  color: white;
+  margin-left: 29%;
+  margin-top: 26%;
+  font-family: 'Menlo Regular';
+  font-weight: normal;
+  font-size: 1.5vw;
+  top: 0.6vh;
+  left: -0.4vw;
+  :hover {
+      color: yellow;
+      cursor: pointer;
+  }
+  /* position: relative;
+  text-decoration: none;
+  color: white;
+  margin-left: 29%;
+  font-family: 'Menlo Regular';
+  font-weight: normal;
+  font-size: 1.5vw;
+  top: 0.5;
+  /* left: 1vw; */
+  /* :hover {
+    color: yellow;
+  } */
+`;
+
+const LinkedIn = styled.div`
+  position: relative;
+  color: white;
+  margin-left: 29%;
+  /* margin-top: 26%; */
+  font-family: 'Menlo Regular';
+  font-weight: normal;
+  font-size: 1.5vw;
+  left: 1vw;
+  /* left: 1vw; */
+  top: 1vh;
+  :hover {
+      color: yellow;
+      cursor: pointer;
+  }
+  /* position: relative;
   text-decoration: none;
   color: white;
   margin-left: 30.1%;
   font-family: 'Menlo Regular';
   font-weight: normal;
-  font-size: 22px;
-  top: 14px;
+  font-size: 1.5vw;
+  top: 1vw;
   :hover {
     color: yellow;
-  }
+  } */
 `;
 
-const LinkedIn = styled(GitHub)`
-  top: 48px;
-  margin-left: -4%;
-`;
-
-const ContactInfo = styled(GitHub)`
-  font-size: 24px;
-  top: 235px;
-  margin-left: -345px;
+const Projects = styled(GitHub)`
+  position: relative;
+  font-size: 1.5vw;
   color: #6da393;
   font-weight: bold;
+  margin: 0;
+  left: 12.5vw;
+  top: 9.5vw; 
   :hover {
       color: purple;
       cursor: pointer;
@@ -133,4 +175,5 @@ const ContactInfo = styled(GitHub)`
 `;
 
 const Brackets = styled.span`
+  color: #6f6d6e;
 `;
