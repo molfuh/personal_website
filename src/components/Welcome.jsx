@@ -1,4 +1,12 @@
 import styled from 'styled-components';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+  import Contact from './Contact.jsx'
+  
 
 export default function Welcome({ gif }) {
   return (
@@ -9,15 +17,24 @@ export default function Welcome({ gif }) {
         <Email onClick={() => navigator.clipboard.writeText('mollyfuhrman@gmail.com')}>mollyfuhrman@gmail.com</Email>
         <GitHub href="https://github.com/molfuh" target="_blank">molfuh</GitHub>
         <LinkedIn href="https://www.linkedin.com/in/molly-fuhrman/" target="_blank">molly-fuhrman</LinkedIn>
-        <Contact>
-            <Brackets>
-            {`<`}
-            </Brackets>
-            Contact
-            <Brackets>
-            {`/>`}
-            </Brackets>
-        </Contact>
+        <Router>
+          <Link to="/contact">
+              <ContactInfo>
+                  <Brackets>
+                  {`<`}
+                  </Brackets>
+                  Contact
+                  <Brackets>
+                  {`/>`}
+                  </Brackets>
+              </ContactInfo>
+            </Link>
+            <Switch>
+                <Route path="/contact">
+                  <Contact />
+                </Route>
+            </Switch>
+          </Router>
       </StyledGif>
     </>
   );
@@ -75,10 +92,10 @@ const LinkedIn = styled(GitHub)`
   margin-left: -4%;
 `;
 
-const Contact = styled(GitHub)`
+const ContactInfo = styled(GitHub)`
   font-size: 24px;
-  top: 37%;
-  margin-left: -30%;
+  top: 235px;
+  margin-left: -345px;
   color: #6da393;
   font-weight: bold;
   :hover {
