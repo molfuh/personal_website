@@ -104,22 +104,25 @@ const HandleState = () => {
         <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
         Contact
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
+        {emailPop && <PopUp emailPop={emailPop}>
+          Copied to clipboard!
+        </PopUp>}
       </Contact>
 
       <Num>16</Num>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Key>email: </Key>
-      <EmailValue>mollyfuhrman@gmail.com</EmailValue><br />
+      <EmailValue onClick={() => HandleEmail(HandleState)}>mollyfuhrman@gmail.com</EmailValue><br />
 
       <Num>17</Num>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Key>github: </Key>
-      <GitLIValue>molfuh</GitLIValue><br />
+      <GitLIValue href="https://github.com/molfuh" target="_blank">github.com/molfuh</GitLIValue><br />
 
       <Num>18</Num>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Key>linkedIn: </Key>
-      <GitLIValue>molly-fuhrman</GitLIValue>
+      <GitLIValue href="https://www.linkedin.com/in/molly-fuhrman/" target="_blank">linkedin.com/in/molly-fuhrman</GitLIValue>
 
       <Contact>
       <Num>19</Num>
@@ -258,9 +261,10 @@ const EmailValue = styled.span`
   }
 `;
 
-const GitLIValue = styled.span`
+const GitLIValue = styled.a`
   color: white;
   position: relative;
+  text-decoration: none;
   :hover {
     color: yellow;
     cursor: pointer;
@@ -290,15 +294,18 @@ const visibility = keyframes`
   100% {opacity: 1}
 `;
 
-const PopUp = styled.div`
-  position: absolute;
+const PopUp = styled.span`
+  /* position: absolute;
   font-weight: normal;
   font-size: 1.4vw;
   opacity: 0;
   top: 32vh;
   left: 21.5vw;
   background-color: transparent;
+  color: yellowgreen; */
+  left: 10px;
   color: yellowgreen;
+  position: relative;
   animation: ${props => props.emailPop && css`${visibility} ease-in 1s` };
 `;
 
