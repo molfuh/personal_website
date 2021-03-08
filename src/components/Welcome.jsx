@@ -22,33 +22,35 @@ const HandleState = () => {
       <StyledContainer />
       <Title>
         <Num>1</Num>
+        &nbsp;
         {`//`} Molly Fuhrman - Web Developer
       </Title>
       <Num>2</Num>
       <LineOne>
         <Num>3</Num>
+        &nbsp;
         <ExportDefault>export default </ExportDefault>
         <Function>function </Function>
         <Hello>Hello <Parens>{`() {`}</Parens></Hello>
       </LineOne>
       <Return>
         <Num>4</Num>
-        &nbsp;&nbsp;return (
+        &nbsp;&nbsp;&nbsp;{`return (`}
       </Return>
       <EmptyOpenBrackets>
         <Num>5</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;{`<>`}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`<>`}
       </EmptyOpenBrackets>
       <Greeting>
         <Num>6</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
         Greeting
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
       </Greeting>
       <HelloType>
       <Num>7</Num>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <ReactTypingEffect
           text={["Hello!"]}
           speed={[160]}
@@ -58,83 +60,110 @@ const HandleState = () => {
       </HelloType>
       <Introduction>
         <Num>8</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
           Introduction
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
         <Text>
           <Num>9</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           My name is Molly Fuhrman</Text>
         <Num>10</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <EmptyOpenBrackets>{`</`}</EmptyOpenBrackets>
           Introduction
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
       </Introduction>
       <Bio>
         <Num>11</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
           Bio
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
         <Text>
           <Num>12</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           I'm a full-stack software engineer.
         </Text>
         <Num>13</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <EmptyOpenBrackets>{`</`}</EmptyOpenBrackets>
           Bio
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
       </Bio>
       <Greeting>
         <Num>14</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <EmptyOpenBrackets>{`</`}</EmptyOpenBrackets>
         Greeting
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
       </Greeting>
       <Contact>
       <Num>15</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
         Contact
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
       </Contact>
 
-
-      <EmailContact>
       <Num>16</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        {/* email: 'mollyfuhrman@gmail.com', */}
-        {emailPop && <PopUp emailPop={emailPop}>
-          Copied to clipboard!
-        </PopUp>}
-        email:
-        <Email onClick={() => HandleEmail(HandleState)}>mollyfuhrman@gmail.com</Email>
-        <br/>
-      </EmailContact>
-        <Num>17</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        {/* github: 'molfuh', */}
-        github:
-        <GitHub href="https://github.com/molfuh" target="_blank">molfuh</GitHub>
-        <br/>
-        <Num>18</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        {/* linkedIn: 'molly-fuhrman' */}
-        linkedIn:
-        <LinkedIn href="https://www.linkedin.com/in/molly-fuhrman/" target="_blank">molly-fuhrman</LinkedIn>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Key>email: </Key>
+      <EmailValue>mollyfuhrman@gmail.com</EmailValue><br />
+
+      <Num>17</Num>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Key>github: </Key>
+      <GitLIValue>molfuh</GitLIValue><br />
+
+      <Num>18</Num>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Key>linkedIn: </Key>
+      <GitLIValue>molly-fuhrman</GitLIValue>
 
       <Contact>
       <Num>19</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <EmptyOpenBrackets>{`</`}</EmptyOpenBrackets>
         Contact
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
       </Contact>
+
+      <Appreciation>
+      <Num>20</Num>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
+          Appreciation
+        <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
+      </Appreciation>
+      <Text>
+        <Num>21</Num>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Thank you for stopping by!</Text>
+      <Appreciation>
+      <Num>22</Num>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <EmptyOpenBrackets>{`</`}</EmptyOpenBrackets>
+          Appreciation
+        <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
+      </Appreciation>
+      <EmptyOpenBrackets>
+        <Num>23</Num>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`</>`}
+      </EmptyOpenBrackets>
+      {/* <Num>24</Num> */}
+      <Return>
+        <Num>22</Num>
+        &nbsp;&nbsp;&nbsp;
+        {`)`}
+      </Return>
+      <Parens>
+        <Num>23</Num>
+        &nbsp;
+        {`}`}
+      </Parens>
+
+
       {/* <StyledGif> */}
         {/* <StyledEmailPopUp active={emailPop}>
         </StyledEmailPopUp> */}
@@ -183,6 +212,7 @@ const Hello = styled.span`
   color:#d1d2a4;
 `;
 const Parens = styled.span`
+  position: relative;
   color: #d3bd00;
 `;
 
@@ -214,11 +244,40 @@ const Introduction = styled(Greeting)`
 const Bio = styled(Greeting)``;
 const Contact = styled(Greeting)``;
 
+const Key = styled.span`
+  position: relative;
+  color: white;
+`;
+
+const EmailValue = styled.span`
+  color: white;
+  position: relative;
+  :hover {
+    color: #ff9800;
+    cursor: pointer;
+  }
+`;
+
+const GitLIValue = styled.span`
+  color: white;
+  position: relative;
+  :hover {
+    color: yellow;
+    cursor: pointer;
+  }
+`;
+
+const Appreciation = styled(Greeting)``;
+
+
+
+
+// const EmailContact = styled(HelloType)`
 const EmailContact = styled(HelloType)`
-//   :hover {
-//       color: #ff9800;
-//       cursor: pointer;
-//   }
+  :hover {
+    color: #ff9800;
+    cursor: pointer;
+  }
 `;
 
 // const StyledEmailPopUp = styled.div`
@@ -262,15 +321,10 @@ const StyledGif = styled.div`
   transform: translate(0, -50%);
 `;
 
-const Email = styled.div`
+const Email = styled.span`
   position: relative;
   color: white;
-  margin-left: 29%;
-  margin-top: 26%;
   font-weight: normal;
-  font-size: 1.5vw;
-  left: -1.5vw;
-  width: 20vw;
   :hover {
       color: #ff9800;
       cursor: pointer;
@@ -280,12 +334,7 @@ const Email = styled.div`
 const GitHub = styled.span`
   position: relative;
   color: white;
-  margin-left: 29%;
-  margin-top: 26%;
   font-weight: normal;
-  font-size: 1.5vw;
-  top: 0.6vh;
-  left: -0.4vw;
   :hover {
       color: yellow;
       cursor: pointer;
@@ -303,17 +352,10 @@ const GitHub = styled.span`
   } */
 `;
 
-const LinkedIn = styled.div`
+const LinkedIn = styled.span`
   position: relative;
   color: white;
-  margin-left: 29%;
-  /* margin-top: 26%; */
   font-weight: normal;
-  font-size: 1.5vw;
-  left: 1vw;
-  /* left: 1vw; */
-  top: 1vh;
-  width: 12vw;
   :hover {
       color: yellow;
       cursor: pointer;
