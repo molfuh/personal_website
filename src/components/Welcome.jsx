@@ -98,8 +98,9 @@ const Email = styled.div`
   font-weight: normal;
   font-size: 1.5vw;
   left: -1.5vw;
+  width: 20vw;
   :hover {
-      color: blue;
+      color: #ff9800;
       cursor: pointer;
   }
 `;
@@ -143,6 +144,7 @@ const LinkedIn = styled.div`
   left: 1vw;
   /* left: 1vw; */
   top: 1vh;
+  width: 12vw;
   :hover {
       color: yellow;
       cursor: pointer;
