@@ -1,5 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 import { useState } from 'react';
+import ReactTypingEffect from 'react-typing-effect';
 
 export default function Welcome() {
   const [emailPop, useEmailPop] = useState(false);
@@ -37,6 +38,14 @@ export default function Welcome() {
         Greeting
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
       </Greeting>
+      <HelloType>
+        <ReactTypingEffect
+          text={["Hello!"]}
+          speed={[160]}
+          typingDelay={[1000]}
+          eraseDelay={[1500]}
+        />
+      </HelloType>
       {/* <StyledGif> */}
         {/* <StyledEmailPopUp active={emailPop}>
         </StyledEmailPopUp> */}
@@ -101,6 +110,11 @@ const EmptyOpenBrackets = styled.span`
 const Greeting = styled.div`
   position: relative;
   color: #65cfb8;
+`;
+
+const HelloType = styled.div`
+  position: relative;
+  color: white;
 `;
 
 // const StyledEmailPopUp = styled.div`
