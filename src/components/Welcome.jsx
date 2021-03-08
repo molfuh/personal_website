@@ -12,6 +12,7 @@ export default function Welcome({ gif }) {
   return (
     <>
       <StyledContainer />
+      <Title>// Molly Fuhrman - Web Developer</Title>
       <StyledGif gif={gif}>
         <Email onClick={() => HandleEmail()}>mollyfuhrman@gmail.com</Email>
         <StyledEmailPopUp active={emailPop} />
@@ -34,6 +35,16 @@ export default function Welcome({ gif }) {
   );
 }
 
+const Title = styled.span`
+  position: absolute;
+  color: white;
+  font-family: 'Menlo Regular';
+  font-weight: normal;
+  font-size: 40px;
+  left: 40px;
+  top: 20px;
+`;
+
 const StyledEmailPopUp = styled.div`
 `;
 
@@ -52,7 +63,7 @@ const PopUp = styled.div`
   position: absolute;
   background-color: transparent;
   color: yellowgreen;
-  animation: ${props => props.emailPop && css`${visibility} ease-in 0.5s` };
+  animation: ${props => props.emailPop && css`${visibility} ease-in 1s` };
   left: 30%;
   top: 50%;
 `;
