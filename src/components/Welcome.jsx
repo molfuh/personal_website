@@ -5,9 +5,16 @@ import ReactTypingEffect from 'react-typing-effect';
 export default function Welcome() {
   const [emailPop, useEmailPop] = useState(false);
 
-  const HandleEmail = () => {
+  const HandleEmail = (cb) => {
     navigator.clipboard.writeText('mollyfuhrman@gmail.com');
-    useEmailPop(!emailPop);
+    useEmailPop(true);
+    setTimeout(() => {
+      cb();
+    }, 1000);
+}
+
+const HandleState = () => {
+  useEmailPop(false);
 }
 
   return (
@@ -26,20 +33,22 @@ export default function Welcome() {
       </LineOne>
       <Return>
         <Num>4</Num>
-        return (
+        &nbsp;&nbsp;return (
       </Return>
       <EmptyOpenBrackets>
         <Num>5</Num>
-        {`<>`}
+        &nbsp;&nbsp;&nbsp;&nbsp;{`<>`}
       </EmptyOpenBrackets>
       <Greeting>
         <Num>6</Num>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
         Greeting
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
       </Greeting>
       <HelloType>
       <Num>7</Num>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <ReactTypingEffect
           text={["Hello!"]}
           speed={[160]}
@@ -49,30 +58,83 @@ export default function Welcome() {
       </HelloType>
       <Introduction>
         <Num>8</Num>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
           Introduction
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
-        <Text><Num>9</Num>My name is Molly Fuhrman</Text>
-        <Num>10</Num><EmptyOpenBrackets>{`</`}</EmptyOpenBrackets>
+        <Text>
+          <Num>9</Num>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          My name is Molly Fuhrman</Text>
+        <Num>10</Num>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <EmptyOpenBrackets>{`</`}</EmptyOpenBrackets>
           Introduction
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
       </Introduction>
       <Bio>
         <Num>11</Num>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
           Bio
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
-        <Text><Num>12</Num>I'm a full-stack software engineer.</Text>
-        <Num>13</Num><EmptyOpenBrackets>{`</`}</EmptyOpenBrackets>
+        <Text>
+          <Num>12</Num>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          I'm a full-stack software engineer.
+        </Text>
+        <Num>13</Num>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <EmptyOpenBrackets>{`</`}</EmptyOpenBrackets>
           Bio
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
       </Bio>
       <Greeting>
-        <Num>6</Num>
+        <Num>14</Num>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <EmptyOpenBrackets>{`</`}</EmptyOpenBrackets>
         Greeting
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
       </Greeting>
+      <Contact>
+      <Num>15</Num>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
+        Contact
+        <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
+      </Contact>
+
+
+      <EmailContact>
+      <Num>16</Num>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {/* email: 'mollyfuhrman@gmail.com', */}
+        {emailPop && <PopUp emailPop={emailPop}>
+          Copied to clipboard!
+        </PopUp>}
+        email:
+        <Email onClick={() => HandleEmail(HandleState)}>mollyfuhrman@gmail.com</Email>
+        <br/>
+      </EmailContact>
+        <Num>17</Num>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {/* github: 'molfuh', */}
+        github:
+        <GitHub href="https://github.com/molfuh" target="_blank">molfuh</GitHub>
+        <br/>
+        <Num>18</Num>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {/* linkedIn: 'molly-fuhrman' */}
+        linkedIn:
+        <LinkedIn href="https://www.linkedin.com/in/molly-fuhrman/" target="_blank">molly-fuhrman</LinkedIn>
+
+      <Contact>
+      <Num>19</Num>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <EmptyOpenBrackets>{`</`}</EmptyOpenBrackets>
+        Contact
+        <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
+      </Contact>
       {/* <StyledGif> */}
         {/* <StyledEmailPopUp active={emailPop}>
         </StyledEmailPopUp> */}
@@ -150,6 +212,14 @@ const Introduction = styled(Greeting)`
 `;
 
 const Bio = styled(Greeting)``;
+const Contact = styled(Greeting)``;
+
+const EmailContact = styled(HelloType)`
+//   :hover {
+//       color: #ff9800;
+//       cursor: pointer;
+//   }
+`;
 
 // const StyledEmailPopUp = styled.div`
 //   /* position: absolute; */
