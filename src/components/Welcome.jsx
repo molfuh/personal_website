@@ -154,7 +154,6 @@ const HandleState = () => {
         <Num>23</Num>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`</>`}
       </EmptyOpenBrackets>
-      {/* <Num>24</Num> */}
       <Return>
         <Num>22</Num>
         &nbsp;&nbsp;&nbsp;
@@ -165,27 +164,6 @@ const HandleState = () => {
         &nbsp;
         {`}`}
       </Parens>
-
-
-      {/* <StyledGif> */}
-        {/* <StyledEmailPopUp active={emailPop}>
-        </StyledEmailPopUp> */}
-        {/* {emailPop && <PopUp emailPop={emailPop}>
-          Copied to clipboard!
-        </PopUp>}
-        <Email onClick={() => HandleEmail()}>mollyfuhrman@gmail.com</Email>
-        <GitHub href="https://github.com/molfuh" target="_blank">molfuh</GitHub>
-        <LinkedIn href="https://www.linkedin.com/in/molly-fuhrman/" target="_blank">molly-fuhrman</LinkedIn>
-        <Projects>
-            <Brackets>
-            {`<`}
-            </Brackets>
-            Projects
-            <Brackets>
-            {` />`}
-            </Brackets>
-        </Projects> */}
-      {/* </StyledGif> */}
     </>
   );
 }
@@ -202,8 +180,6 @@ const Title = styled.div`
 
 const LineOne = styled.div`
   position: relative;
-  /* top: 5vh; */
-  /* color:  */
 `;
 const ExportDefault = styled.span`
   color: #dc7bdf;
@@ -273,21 +249,6 @@ const GitLIValue = styled.a`
 
 const Appreciation = styled(Greeting)``;
 
-
-
-
-// const EmailContact = styled(HelloType)`
-const EmailContact = styled(HelloType)`
-  :hover {
-    color: #ff9800;
-    cursor: pointer;
-  }
-`;
-
-// const StyledEmailPopUp = styled.div`
-//   /* position: absolute; */
-// `;
-
 const visibility = keyframes`
   0% {opacity: 0}
   25% {opacity: 1}
@@ -295,14 +256,6 @@ const visibility = keyframes`
 `;
 
 const PopUp = styled.span`
-  /* position: absolute;
-  font-weight: normal;
-  font-size: 1.4vw;
-  opacity: 0;
-  top: 32vh;
-  left: 21.5vw;
-  background-color: transparent;
-  color: yellowgreen; */
   left: 10px;
   color: yellowgreen;
   position: relative;
@@ -314,85 +267,4 @@ const StyledContainer = styled.div`
   height: 100vh;
   width: 100vw;
   position: absolute;
-`;
-
-const StyledGif = styled.div`
-  background-color: #1d1d1d;
-  background-image: url(${ props => props.gif });
-  position: absolute;
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 80vh;
-  width: 75vw;
-  top: 55%;
-  transform: translate(0, -50%);
-`;
-
-const Email = styled.span`
-  position: relative;
-  color: white;
-  font-weight: normal;
-  :hover {
-      color: #ff9800;
-      cursor: pointer;
-  }
-`;
-
-const GitHub = styled.span`
-  position: relative;
-  color: white;
-  font-weight: normal;
-  :hover {
-      color: yellow;
-      cursor: pointer;
-  }
-  /* position: relative;
-  text-decoration: none;
-  color: white;
-  margin-left: 29%;
-  font-weight: normal;
-  font-size: 1.5vw;
-  top: 0.5;
-  /* left: 1vw; */
-  /* :hover {
-    color: yellow;
-  } */
-`;
-
-const LinkedIn = styled.span`
-  position: relative;
-  color: white;
-  font-weight: normal;
-  :hover {
-      color: yellow;
-      cursor: pointer;
-  }
-  /* position: relative;
-  text-decoration: none;
-  color: white;
-  margin-left: 30.1%;
-  font-weight: normal;
-  font-size: 1.5vw;
-  top: 1vw;
-  :hover {
-    color: yellow;
-  } */
-`;
-
-const Projects = styled(GitHub)`
-  position: relative;
-  font-size: 1.5vw;
-  color: #6da393;
-  font-weight: bold;
-  margin: 0;
-  left: 12.5vw;
-  top: 9.5vw;
-  :hover {
-      color: purple;
-      cursor: pointer;
-  }
-`;
-
-const Brackets = styled.span`
-  color: #6f6d6e;
 `;
