@@ -1,18 +1,19 @@
 import styled, { css, keyframes } from 'styled-components';
 import { useState, useEffect } from 'react';
 import ReactTypingEffect from 'react-typing-effect';
+import ProjectComponents from './ProjectComponents';
 
 export default function Welcome() {
   const [emailPop, useEmailPop] = useState(false);
   const [currentEmailMessage, changeEmailMessage] = useState('If clicked, will copy email to clipboard.');
   const [emailClicked, setEmailClick] = useState(false);
   const [openCode, setOpenCode] = useState(false);
+  const [showProjects, setShowProjects] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setOpenCode(true)
-    // }, 6000);
-    }, 1000);
+    }, 6000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -21,6 +22,10 @@ export default function Welcome() {
     changeEmailMessage('Copied to clipboard!')
     setEmailClick(true);
     useEmailPop(true);
+  }
+
+  const HandleProjects = () => {
+    setShowProjects(true);
   }
 
 
@@ -121,10 +126,6 @@ export default function Welcome() {
         <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
         Contact
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
-
-        {/* {emailPop && <PopUp emailPop={emailPop}>
-          Copied to clipboard!
-        </PopUp>} */}
       </Contact>
 
       <Num>16</Num>
@@ -188,33 +189,34 @@ export default function Welcome() {
       <Projects>
       <Num>23</Num>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <Hover>
         <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
           Projects {" "}
-          <Function>
-             onClick={`{`}
-            <Hello>
-              openProjects
-            </Hello>
-            {`}`}
+          <Function onClick={HandleProjects}>
+            <Hover>
+              onClick={`{`}
+              <Hello>
+                openProjects
+              </Hello>
+              {`}`}
+            </Hover>
           </Function>
         <EmptyOpenBrackets>{` />`}</EmptyOpenBrackets>
-        </Hover>
       </Projects>
       <EmptyOpenBrackets>
-        <Num>22</Num>
+        <Num>24</Num>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`</>`}
       </EmptyOpenBrackets>
       <Return>
-        <Num>23</Num>
+        <Num>25</Num>
         &nbsp;&nbsp;&nbsp;
         {`)`}
       </Return>
       <Parens>
-        <Num>24</Num>
+        <Num>26</Num>
         &nbsp;
         {`}`}
       </Parens>
+      {showProjects ? <ProjectComponents /> : <></>}
     </>
   );
 }
@@ -330,7 +332,7 @@ const EmailDropDownContent = styled.div`
     top: -47px;
     color: #589bc8;
     width: 500px;
-    font-size: 1.1vw;
+    font-size: 1.7vh;
     padding-left: 20px;
     .clicked {
       color: lime;
@@ -341,7 +343,7 @@ const EmailDropDownContent = styled.div`
     top: -47px;
     color: #589bc8;
     width: 500px;
-    font-size: 1.1vw;
+    font-size: 1.7vh;
     padding-left: 20px;
   }
 `;
@@ -352,10 +354,6 @@ const Projects = styled(Greeting)`
 
 const Hover = styled.span`
   :hover {
-    color: yellow;
-    cursor: pointer;
-  }
-  &>*:hover {
     color: yellow;
     cursor: pointer;
   }
