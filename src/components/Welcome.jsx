@@ -33,7 +33,7 @@ export default function Welcome() {
     <>
     <OpeningTerminal openCode={openCode}>
       <Terminal>
-        Welcome to: Molly_Fuhrman_Website guest$ {' '}
+        Welcome to: Molly_Fuhrman_Website $ {' '}
         <ReactTypingEffect
           text={["code ."]}
           speed={[150]}
@@ -235,6 +235,7 @@ const Terminal = styled.div`
   height: 30vh;
   width: 60vh;
   border: 1px solid black;
+  padding: 5px;
 `;
 
 const Num = styled.span`
@@ -335,7 +336,7 @@ const EmailDropDownContent = styled.div`
     font-size: 1.7vh;
     padding-left: 20px;
     .clicked {
-      color: lime;
+      color: #4CAF50;
     }
   }
   ${GitLIValue}:hover & {
@@ -357,12 +358,6 @@ const Hover = styled.span`
     color: yellow;
     cursor: pointer;
   }
-`;
-
-const visibility = keyframes`
-  0% {opacity: 0}
-  25% {opacity: 1}
-  100% {opacity: 1}
 `;
 
 const StyledContainer = styled.div`

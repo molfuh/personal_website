@@ -61,6 +61,7 @@ const Container = styled.div`
   height: 100vh;
   top: 0;
   width: 55%;
+  background-color: #1d1d1d;
 `;
 
 const Scroll = styled.div`
