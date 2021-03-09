@@ -48,8 +48,6 @@ export default function ProjectComponents () {
         <Num>12</Num>
         &nbsp;
         Legacy project independently scaled and deployed using service-oriented architecture<br />
-        <Num>13</Num>
-        &nbsp;&nbsp;
       </SDC>
       </Container>
     </>
@@ -58,10 +56,11 @@ export default function ProjectComponents () {
 
 const Container = styled.div`
   position: absolute;
-  left: 42%;
+  overflow: hidden;
+  left: 45%;
   height: 100vh;
   top: 0;
-  width: 58%;
+  width: 55%;
 `;
 
 const Scroll = styled.div`

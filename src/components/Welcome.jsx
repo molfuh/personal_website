@@ -13,7 +13,7 @@ export default function Welcome() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setOpenCode(true)
-    }, 6000);
+    }, 5000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -25,7 +25,7 @@ export default function Welcome() {
   }
 
   const HandleProjects = () => {
-    setShowProjects(true);
+    setShowProjects(!showProjects);
   }
 
 
@@ -33,7 +33,7 @@ export default function Welcome() {
     <>
     <OpeningTerminal openCode={openCode}>
       <Terminal>
-        Guest: Molly_Fuhrman_Website guest$ {' '}
+        Welcome to: Molly_Fuhrman_Website guest$ {' '}
         <ReactTypingEffect
           text={["code ."]}
           speed={[150]}
@@ -76,7 +76,7 @@ export default function Welcome() {
         <ReactTypingEffect
           text={["Hello!"]}
           speed={[160]}
-          typingDelay={[8000]}
+          typingDelay={[1500]}
           eraseDelay={[1500]}
         />
       </HelloType>
