@@ -1,10 +1,9 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import ReactTypingEffect from 'react-typing-effect';
 import ProjectComponents from './ProjectComponents';
 
 export default function Welcome() {
-  const [emailPop, useEmailPop] = useState(false);
   const [currentEmailMessage, changeEmailMessage] = useState('If clicked, will copy email to clipboard.');
   const [emailClicked, setEmailClick] = useState(false);
   const [openCode, setOpenCode] = useState(false);
@@ -21,13 +20,11 @@ export default function Welcome() {
     navigator.clipboard.writeText('mollyfuhrman@gmail.com');
     changeEmailMessage('Copied to clipboard!')
     setEmailClick(true);
-    useEmailPop(true);
   }
 
   const HandleProjects = () => {
     setShowProjects(!showProjects);
   }
-
 
   return (
     <>
