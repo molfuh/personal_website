@@ -1,26 +1,41 @@
 import styled, { css, keyframes } from 'styled-components';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ReactTypingEffect from 'react-typing-effect';
 
 export default function Welcome() {
   const [emailPop, useEmailPop] = useState(false);
   const [currentEmailMessage, changeEmailMessage] = useState('If clicked, will copy email to clipboard.');
+  const [emailClicked, setEmailClick] = useState(false);
+  const [openCode, setOpenCode] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setOpenCode(true)
+    // }, 6000);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const HandleEmail = (cb) => {
     navigator.clipboard.writeText('mollyfuhrman@gmail.com');
     changeEmailMessage('Copied to clipboard!')
+    setEmailClick(true);
     useEmailPop(true);
-    setTimeout(() => {
-      cb();
-    }, 1000);
-}
+  }
 
-const HandleState = () => {
-  useEmailPop(false);
-}
 
   return (
     <>
+    <OpeningTerminal openCode={openCode}>
+      <Terminal>
+        Guest: Molly_Fuhrman_Website guest$ {' '}
+        <ReactTypingEffect
+          text={["code ."]}
+          speed={[150]}
+        />
+      </Terminal>
+    </OpeningTerminal>
+
       <StyledContainer />
       <Title>
         <Num>1</Num>
@@ -56,7 +71,7 @@ const HandleState = () => {
         <ReactTypingEffect
           text={["Hello!"]}
           speed={[160]}
-          typingDelay={[1000]}
+          typingDelay={[8000]}
           eraseDelay={[1500]}
         />
       </HelloType>
@@ -115,10 +130,12 @@ const HandleState = () => {
       <Num>16</Num>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Key>email: </Key>
-      <EmailValue onClick={() => HandleEmail(HandleState)}>
+      <EmailValue onClick={HandleEmail}>
         mollyfuhrman@gmail.com
         <EmailDropDownContent>
+          <span className={emailClicked && 'clicked'}>
             {currentEmailMessage}
+          </span>
         </EmailDropDownContent>
       </EmailValue><br />
 
@@ -201,6 +218,22 @@ const HandleState = () => {
     </>
   );
 }
+
+const OpeningTerminal = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: ${props => props.openCode ? 'absolute' : 'relative'}
+`;
+
+const Terminal = styled.div`
+  position: absolute;
+  height: 30vh;
+  width: 60vh;
+  border: 1px solid black;
+`;
 
 const Num = styled.span`
   color: #909090;
@@ -299,6 +332,9 @@ const EmailDropDownContent = styled.div`
     width: 500px;
     font-size: 1.1vw;
     padding-left: 20px;
+    .clicked {
+      color: lime;
+    }
   }
   ${GitLIValue}:hover & {
     display: block;
@@ -329,13 +365,6 @@ const visibility = keyframes`
   0% {opacity: 0}
   25% {opacity: 1}
   100% {opacity: 1}
-`;
-
-const PopUp = styled.span`
-  left: 10px;
-  color: yellowgreen;
-  position: relative;
-  animation: ${props => props.emailPop && css`${visibility} ease-in 1s` };
 `;
 
 const StyledContainer = styled.div`
