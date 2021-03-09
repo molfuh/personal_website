@@ -4,9 +4,11 @@ import ReactTypingEffect from 'react-typing-effect';
 
 export default function Welcome() {
   const [emailPop, useEmailPop] = useState(false);
+  const [currentEmailMessage, changeEmailMessage] = useState('If clicked, will copy email to clipboard.');
 
   const HandleEmail = (cb) => {
     navigator.clipboard.writeText('mollyfuhrman@gmail.com');
+    changeEmailMessage('Copied to clipboard!')
     useEmailPop(true);
     setTimeout(() => {
       cb();
@@ -104,25 +106,41 @@ const HandleState = () => {
         <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
         Contact
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
-        {emailPop && <PopUp emailPop={emailPop}>
+
+        {/* {emailPop && <PopUp emailPop={emailPop}>
           Copied to clipboard!
-        </PopUp>}
+        </PopUp>} */}
       </Contact>
 
       <Num>16</Num>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Key>email: </Key>
-      <EmailValue onClick={() => HandleEmail(HandleState)}>mollyfuhrman@gmail.com</EmailValue><br />
+      <EmailValue onClick={() => HandleEmail(HandleState)}>
+        mollyfuhrman@gmail.com
+        <EmailDropDownContent>
+            {currentEmailMessage}
+        </EmailDropDownContent>
+      </EmailValue><br />
 
       <Num>17</Num>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Key>github: </Key>
-      <GitLIValue href="https://github.com/molfuh" target="_blank">github.com/molfuh</GitLIValue><br />
+      <GitLIValue href="https://github.com/molfuh" target="_blank">
+        github.com/molfuh
+        <EmailDropDownContent>
+            If clicked, will open up GitHub in new tab.
+        </EmailDropDownContent>
+      </GitLIValue><br />
 
       <Num>18</Num>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Key>linkedIn: </Key>
-      <GitLIValue href="https://www.linkedin.com/in/molly-fuhrman/" target="_blank">linkedin.com/in/molly-fuhrman</GitLIValue>
+      <GitLIValue href="https://www.linkedin.com/in/molly-fuhrman/" target="_blank">
+        linkedin.com/in/molly-fuhrman
+        <EmailDropDownContent>
+          If clicked, will open up LinkedIn in new tab.
+        </EmailDropDownContent>
+      </GitLIValue>
 
       <Contact>
       <Num>19</Num>
@@ -247,6 +265,7 @@ const Key = styled.span`
 const EmailValue = styled.span`
   color: white;
   position: relative;
+  display: inline-block;
   :hover {
     color: #ff9800;
     cursor: pointer;
@@ -257,9 +276,37 @@ const GitLIValue = styled.a`
   color: white;
   position: relative;
   text-decoration: none;
+  display: inline-block;
   :hover {
     color: yellow;
     cursor: pointer;
+  }
+`;
+
+const EmailDropDownContent = styled.div`
+  display: none;
+  position: absolute;
+  background-color: #1d1d1d;
+  color: white;
+  min-width: 160px;
+  border: 1px solid #4e4e4e;
+  padding: 12px 16px;
+  z-index: 1;
+  ${EmailValue}:hover & {
+    display: block;
+    top: -47px;
+    color: #589bc8;
+    width: 500px;
+    font-size: 1.1vw;
+    padding-left: 20px;
+  }
+  ${GitLIValue}:hover & {
+    display: block;
+    top: -47px;
+    color: #589bc8;
+    width: 500px;
+    font-size: 1.1vw;
+    padding-left: 20px;
   }
 `;
 
