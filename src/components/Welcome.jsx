@@ -31,7 +31,7 @@ const HandleState = () => {
         &nbsp;
         <ExportDefault>export default </ExportDefault>
         <Function>function </Function>
-        <Hello>Hello <Parens>{`() {`}</Parens></Hello>
+        <Hello>Hello<Parens>{`() {`}</Parens></Hello>
       </LineOne>
       <Return>
         <Num>4</Num>
@@ -150,17 +150,33 @@ const HandleState = () => {
           Appreciation
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
       </Appreciation>
+      <Projects>
+      <Num>23</Num>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Hover>
+        <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
+          Projects {" "}
+          <Function>
+             onClick={`{`}
+            <Hello>
+              openProjects
+            </Hello>
+            {`}`}
+          </Function>
+        <EmptyOpenBrackets>{` />`}</EmptyOpenBrackets>
+        </Hover>
+      </Projects>
       <EmptyOpenBrackets>
-        <Num>23</Num>
+        <Num>22</Num>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`</>`}
       </EmptyOpenBrackets>
       <Return>
-        <Num>22</Num>
+        <Num>23</Num>
         &nbsp;&nbsp;&nbsp;
         {`)`}
       </Return>
       <Parens>
-        <Num>23</Num>
+        <Num>24</Num>
         &nbsp;
         {`}`}
       </Parens>
@@ -248,6 +264,19 @@ const GitLIValue = styled.a`
 `;
 
 const Appreciation = styled(Greeting)``;
+const Projects = styled(Greeting)`
+`;
+
+const Hover = styled.span`
+  :hover {
+    color: yellow;
+    cursor: pointer;
+  }
+  &>*:hover {
+    color: yellow;
+    cursor: pointer;
+  }
+`;
 
 const visibility = keyframes`
   0% {opacity: 0}
