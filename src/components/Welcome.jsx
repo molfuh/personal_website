@@ -143,7 +143,7 @@ export default function Welcome() {
       <GitLIValue href="https://github.com/molfuh" target="_blank">
         github.com/molfuh
         <EmailDropDownContent>
-            If clicked, will open up GitHub in new tab.
+            If clicked, will open GitHub in new tab.
         </EmailDropDownContent>
       </GitLIValue><br />
 
@@ -153,7 +153,7 @@ export default function Welcome() {
       <GitLIValue href="https://www.linkedin.com/in/molly-fuhrman/" target="_blank">
         linkedin.com/in/molly-fuhrman
         <EmailDropDownContent>
-          If clicked, will open up LinkedIn in new tab.
+          If clicked, will open LinkedIn in new tab.
         </EmailDropDownContent>
       </GitLIValue>
 
@@ -242,6 +242,13 @@ const Terminal = styled.div`
   width: 60vh;
   border: 1px solid black;
   padding: 10px;
+`;
+
+const StyledContainer = styled.div`
+  background-color: #1d1d1d;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
 `;
 
 const Num = styled.span`
@@ -367,11 +374,4 @@ const Hover = styled.span`
 
 const RecentProjs = styled.span`
   color: #6f9b56;
-`;
-
-const StyledContainer = styled.div`
-  background-color: #1d1d1d;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
 `;
