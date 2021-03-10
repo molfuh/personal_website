@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ReactTypingEffect from 'react-typing-effect';

@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
 export default function App() {
   return (
+    // eslint-disable-next-line react/jsx-filename-extension
     <>
       <Welcome />
       <GlobalStyle />
