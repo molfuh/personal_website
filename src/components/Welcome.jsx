@@ -183,8 +183,17 @@ export default function Welcome() {
           Appreciation
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
       </Appreciation>
-      <Projects>
       <Num>23</Num>
+      <br />
+      <Text>
+        <Num>24</Num>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <RecentProjs>
+          {`{/* Click below to see recent projects!  */}`}
+        </RecentProjs>
+      </Text>
+      <Projects>
+      <Num>25</Num>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <EmptyOpenBrackets>{`<`}</EmptyOpenBrackets>
           Projects {" "}
@@ -200,16 +209,16 @@ export default function Welcome() {
         <EmptyOpenBrackets>{` />`}</EmptyOpenBrackets>
       </Projects>
       <EmptyOpenBrackets>
-        <Num>24</Num>
+        <Num>26</Num>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`</>`}
       </EmptyOpenBrackets>
       <Return>
-        <Num>25</Num>
+        <Num>27</Num>
         &nbsp;&nbsp;&nbsp;
         {`)`}
       </Return>
       <Parens>
-        <Num>26</Num>
+        <Num>28</Num>
         &nbsp;
         {`}`}
       </Parens>
@@ -243,6 +252,7 @@ const Num = styled.span`
 const Title = styled.div`
   position: relative;
   color: white;
+  font-size: 2.1vh;
 `;
 
 const LineOne = styled.div`
@@ -255,7 +265,7 @@ const Function = styled.span`
   color: #ade0ff;
 `;
 const Hello = styled.span`
-  color:#d1d2a4;
+  color: #dee1af;
 `;
 const Parens = styled.span`
   position: relative;
@@ -282,7 +292,11 @@ const HelloType = styled.div`
   color: white;
 `;
 
-const Text = styled(HelloType)``;
+const Text = styled(HelloType)`
+  .comment {
+    color: red;
+  }
+`;
 
 const Introduction = styled(Greeting)`
 `;
@@ -308,10 +322,12 @@ const EmailValue = styled.span`
 const GitLIValue = styled.a`
   color: white;
   position: relative;
-  text-decoration: none;
   display: inline-block;
   :hover {
-    color: yellow;
+    /* color: yellow; */
+    /* color: cornflowerblue; */
+    /* color: rgb(79,193,255); */
+    color: #4FC1FF;
     cursor: pointer;
   }
 `;
@@ -352,9 +368,14 @@ const Projects = styled(Greeting)`
 
 const Hover = styled.span`
   :hover {
-    color: yellow;
+    /* color: yellow; */
+    color: #ec9ef1;
     cursor: pointer;
   }
+`;
+
+const RecentProjs = styled.span`
+  color: #6f9b56;
 `;
 
 const StyledContainer = styled.div`
