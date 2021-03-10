@@ -85,7 +85,7 @@ export default function Welcome() {
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
         <Text>
           <Num>9</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           My name is Molly Fuhrman</Text>
         <Num>10</Num>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -101,7 +101,7 @@ export default function Welcome() {
         <EmptyOpenBrackets>{`>`}</EmptyOpenBrackets>
         <Text>
           <Num>12</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           I'm a full-stack software engineer.
         </Text>
         <Num>13</Num>
@@ -126,7 +126,7 @@ export default function Welcome() {
       </Contact>
 
       <Num>16</Num>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Key>email: </Key>
       <EmailValue onClick={HandleEmail}>
         mollyfuhrman@gmail.com
@@ -138,7 +138,7 @@ export default function Welcome() {
       </EmailValue><br />
 
       <Num>17</Num>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Key>github: </Key>
       <GitLIValue href="https://github.com/molfuh" target="_blank">
         github.com/molfuh
@@ -148,8 +148,8 @@ export default function Welcome() {
       </GitLIValue><br />
 
       <Num>18</Num>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <Key>linkedIn: </Key>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Key>linkedin: </Key>
       <GitLIValue href="https://www.linkedin.com/in/molly-fuhrman/" target="_blank">
         linkedin.com/in/molly-fuhrman
         <EmailDropDownContent>
@@ -222,7 +222,7 @@ export default function Welcome() {
         &nbsp;
         {`}`}
       </Parens>
-      {showProjects ? <ProjectComponents /> : <></>}
+      {showProjects ? <ProjectComponents openCode={openCode}/> : <></>}
     </>
   );
 }

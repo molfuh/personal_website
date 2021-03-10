@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-export default function ProjectComponents () {
+export default function ProjectComponents ({ openCode }) {
   return (
     <>
-      <Container>
+      <Container openCode={openCode}>
         <Scroll></Scroll>
       <Title>
         <Num>1</Num>
@@ -56,10 +56,10 @@ export default function ProjectComponents () {
 
 const Container = styled.div`
   position: absolute;
+  top: ${props => props.openCode ? '0' : '100vh'};
   overflow: hidden;
   left: 40%;
   height: 100vh;
-  top: 0;
   width: 60%;
   background-color: #1d1d1d;
 `;
