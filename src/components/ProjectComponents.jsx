@@ -57,10 +57,10 @@ export default function ProjectComponents () {
 const Container = styled.div`
   position: absolute;
   overflow: hidden;
-  left: 45%;
+  left: 40%;
   height: 100vh;
   top: 0;
-  width: 55%;
+  width: 60%;
   background-color: #1d1d1d;
 `;
 

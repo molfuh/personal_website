@@ -241,7 +241,7 @@ const Terminal = styled.div`
   height: 30vh;
   width: 60vh;
   border: 1px solid black;
-  padding: 5px;
+  padding: 10px;
 `;
 
 const Num = styled.span`
@@ -292,11 +292,7 @@ const HelloType = styled.div`
   color: white;
 `;
 
-const Text = styled(HelloType)`
-  .comment {
-    color: red;
-  }
-`;
+const Text = styled(HelloType)``;
 
 const Introduction = styled(Greeting)`
 `;
@@ -324,9 +320,6 @@ const GitLIValue = styled.a`
   position: relative;
   display: inline-block;
   :hover {
-    /* color: yellow; */
-    /* color: cornflowerblue; */
-    /* color: rgb(79,193,255); */
     color: #4FC1FF;
     cursor: pointer;
   }
@@ -363,12 +356,10 @@ const EmailDropDownContent = styled.div`
 `;
 
 const Appreciation = styled(Greeting)``;
-const Projects = styled(Greeting)`
-`;
+const Projects = styled(Greeting)``;
 
 const Hover = styled.span`
   :hover {
-    /* color: yellow; */
     color: #ec9ef1;
     cursor: pointer;
   }
