@@ -101,7 +101,7 @@ export default function Welcome() {
           <Text>
             <Num>12</Num>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            I&apos;m a full-stack software engineer.
+            <span>I&apos;m a full-stack software engineer.</span>
           </Text>
           <Num>13</Num>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -241,11 +241,17 @@ const StyledContainer = styled.main`
   height: 100vh;
   width: 100vw;
   position: absolute;
+  @media (max-width: 768px) {
+    font-size: 1.5vh;
+  }
 `;
 
 const Num = styled.span`
   color: #909090;
   position: relative;
+  @media (max-width: 768px) {
+    font-size: 1.5vh;
+  }
 `;
 
 const Title = styled.div`
@@ -282,7 +288,6 @@ const EmptyOpenBrackets = styled.span`
 `;
 
 const Greeting = styled.div`
-  position: relative;
   color: #65cfb8;
 `;
 

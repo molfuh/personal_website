@@ -31,9 +31,12 @@ const OpeningTerminal = styled.div`
 const Terminal = styled.div`
   position: absolute;
   height: 30vh;
-  width: 60vh;
+  width: 30vw;
   border: 1px solid black;
   padding: 10px;
+  @media (max-width: 768px) {
+    width: 70vw;
+  }
 `;
 
 TerminalView.propTypes = {
