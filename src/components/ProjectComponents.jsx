@@ -22,7 +22,9 @@ export default function ProjectComponents({ openCode }) {
           <br />
           <Num>4</Num>
           &nbsp;&nbsp;
+          <span>
           Minimum viable product for phone app to create self-designed meditative music
+          </span>
           <br />
           <Num>5</Num>
         &nbsp;&nbsp;&nbsp;
@@ -40,7 +42,9 @@ export default function ProjectComponents({ openCode }) {
           <br />
           <Num>8</Num>
           &nbsp;&nbsp;
+          <span>
           Single page web app for users to view a product from a popular pet supply website
+          </span>
           <br />
           <Num>9</Num>
         &nbsp;&nbsp;&nbsp;
@@ -49,6 +53,7 @@ export default function ProjectComponents({ openCode }) {
         <br />
         <br />
         <br />
+        {screen.width < 768 ? <br /> : <></>}
         <Num>10</Num>
         <SDC>
           <Num>11</Num>
@@ -57,7 +62,9 @@ export default function ProjectComponents({ openCode }) {
           <br />
           <Num>12</Num>
           &nbsp;
+          <span>
           Legacy project independently scaled and deployed using service-oriented architecture
+          </span>
           <br />
           <Num>13</Num>
         </SDC>
@@ -74,6 +81,14 @@ const Container = styled.div`
   height: 100vh;
   width: 60%;
   background-color: #1d1d1d;
+  @media (max-width: 768px) {
+    height: 50vh;
+    width: 100vw;
+    left: 0;
+    font-size: 1.5vh;
+    top: 55vh;
+    border-top: 1px solid #909090;
+  }
 `;
 
 const Scroll = styled.div`
