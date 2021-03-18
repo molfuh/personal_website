@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { SplitPane } from "react-collapse-pane";
 
 export default function ProjectComponents({ openCode }) {
   return (
@@ -53,7 +54,7 @@ export default function ProjectComponents({ openCode }) {
         <br />
         <br />
         <br />
-        {screen.width < 768 ? <br /> : <></>}
+        {window.innerWidth < 768 ? <br /> : <></>}
         <Num>10</Num>
         <SDC>
           <Num>11</Num>
@@ -74,19 +75,20 @@ export default function ProjectComponents({ openCode }) {
 }
 
 const Container = styled.div`
+  padding: 5px;
   position: absolute;
   top: ${(props) => (props.openCode ? '0' : '100vh')};
   overflow: hidden;
-  left: 40%;
+  /* left: 40%; */
   height: 100vh;
-  width: 60%;
+  width: 100vw;
   background-color: #1d1d1d;
   @media (max-width: 768px) {
-    height: 50vh;
+    height: 100vh;
     width: 100vw;
     left: 0;
     font-size: 1.5vh;
-    top: 55vh;
+    /* top: 55vh; */
     border-top: 1px solid #909090;
   }
 `;
@@ -94,8 +96,11 @@ const Container = styled.div`
 const Scroll = styled.div`
   color: #909090;
   position: absolute;
-  border: 1px solid #494949;
+  border-left: 1px solid #494949;
   height: 100vh;
+  @media (max-width: 768px) {
+    border: none;
+  }
 `;
 
 const Num = styled.span`

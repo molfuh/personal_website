@@ -4,19 +4,36 @@ import styled from 'styled-components';
 import ReactTypingEffect from 'react-typing-effect';
 import ProjectComponents from './ProjectComponents';
 import TerminalView from './TerminalView';
+import { SplitPane } from "react-collapse-pane";
 
 export default function Welcome() {
   const [currentEmailMessage, changeEmailMessage] = useState('If clicked, will copy email to clipboard.');
   const [emailClicked, setEmailClick] = useState(false);
   const [openCode, setOpenCode] = useState(false);
   const [showProjects, setShowProjects] = useState(false);
+  const [splitDirection, useSplitDirection] = useState('vertical');
+
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setOpenCode(true);
+      handleOpening(handleScreenSize);
     }, 5000);
     return () => clearTimeout(timer);
   }, []);
+
+  let handleOpening = (cb) => {
+    setOpenCode(true);
+    cb();
+  }
+
+  let handleScreenSize = () => {
+    // useEffect(() => {
+      if (window.innerWidth < 768) {
+        useSplitDirection('horizontal');
+      }
+    // }, [window.innerWidth])
+  }
 
   const HandleEmail = () => {
     navigator.clipboard.writeText('mollyfuhrman@gmail.com');
@@ -31,6 +48,13 @@ export default function Welcome() {
   return (
     <>
       <TerminalView openCode={openCode} />
+      <SplitPane split={splitDirection} resizerOptions={{
+          css: {
+            width: '1px',
+            background: 'rgba(0, 0, 0, 0)',
+          }
+        }}
+        >
       <StyledContainer>
         <Title>
           <Num>1</Num>
@@ -228,22 +252,32 @@ export default function Welcome() {
           &nbsp;
           {'}'}
         </Parens>
-        {showProjects ? <ProjectComponents openCode={openCode} /> : <></>}
         <br />
         <Num>29</Num>
       </StyledContainer>
+      {showProjects ? <ProjectComponents openCode={openCode} /> : <NoProjects></NoProjects>}
+      </SplitPane>
     </>
   );
 }
 
 const StyledContainer = styled.main`
+  padding: 10px;
   background-color: #1d1d1d;
   height: 100vh;
   width: 100vw;
   position: absolute;
+  /* position: relative; */
   @media (max-width: 768px) {
     font-size: 1.5vh;
   }
+`;
+
+const NoProjects = styled.div`
+  position: absolute;
+  background-color: #1d1d1d;
+  height: 100vh;
+  width: 100vw;
 `;
 
 const Num = styled.span`
