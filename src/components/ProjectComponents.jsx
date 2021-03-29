@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { SplitPane } from "react-collapse-pane";
 
-export default function ProjectComponents({ openCode }) {
+export default function ProjectComponents({ openCode, showProjects }) {
   return (
     <>
-      <Container openCode={openCode}>
+      <Container openCode={openCode} showProjects={showProjects}>
         <Scroll />
         <Title>
           <Num>1</Num>
@@ -75,6 +75,7 @@ export default function ProjectComponents({ openCode }) {
 }
 
 const Container = styled.div`
+  z-index: ${({showProjects}) => showProjects ? 2 : 1};
   padding: 5px;
   position: absolute;
   top: ${(props) => (props.openCode ? '0' : '100vh')};
@@ -127,4 +128,5 @@ const SDC = styled(MVP)``;
 
 ProjectComponents.propTypes = {
   openCode: PropTypes.bool.isRequired,
+  showProjects: PropTypes.bool.isRequired,
 };

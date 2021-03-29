@@ -48,14 +48,18 @@ export default function Welcome() {
   return (
     <>
       <TerminalView openCode={openCode} />
-      <SplitPane split={splitDirection} resizerOptions={{
+      <SplitPane split={splitDirection}
+      resizerOptions={{
           css: {
-            width: '1px',
+            width: '50px',
             background: 'rgba(0, 0, 0, 0)',
           }
         }}
+        collapseOptions={{
+          collapseSize: 50,
+        }}
         >
-      <StyledContainer>
+      <StyledContainer showProjects={showProjects}>
         <Title>
           <Num>1</Num>
           &nbsp;
@@ -255,13 +259,14 @@ export default function Welcome() {
         <br />
         <Num>29</Num>
       </StyledContainer>
-      {showProjects ? <ProjectComponents openCode={openCode} /> : <NoProjects></NoProjects>}
+      {showProjects ? <ProjectComponents openCode={openCode} showProjects={showProjects} /> : <NoProjects></NoProjects>}
       </SplitPane>
     </>
   );
 }
 
 const StyledContainer = styled.main`
+  z-index: ${({showProjects}) => showProjects ? 1 : 2};
   padding: 10px;
   background-color: #1d1d1d;
   height: 100vh;
@@ -371,12 +376,12 @@ const EmailDropDownContent = styled.div`
   min-width: 160px;
   border: 1px solid #4e4e4e;
   padding: 12px 16px;
-  z-index: 1;
+  z-index: 3;
   ${EmailValue}:hover & {
     display: block;
     top: -47px;
     color: #589bc8;
-    width: 500px;
+    width: 350px;
     font-size: 1.7vh;
     padding-left: 20px;
     .clicked {
@@ -387,7 +392,7 @@ const EmailDropDownContent = styled.div`
     display: block;
     top: -47px;
     color: #589bc8;
-    width: 500px;
+    width: 350px;
     font-size: 1.7vh;
     padding-left: 20px;
   }
