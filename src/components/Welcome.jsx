@@ -278,7 +278,6 @@ const StyledContainer = styled.main`
   height: 100vh;
   width: 100vw;
   position: absolute;
-  /* position: relative; */
   @media (max-width: 768px) {
     font-size: 1.5vh;
   }

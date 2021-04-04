@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-// import { SplitPane } from "react-collapse-pane";
 
 export default function ProjectComponents({ openCode, showProjects }) {
   return (
@@ -80,7 +79,6 @@ const Container = styled.div`
   position: absolute;
   top: ${(props) => (props.openCode ? '0' : '100vh')};
   overflow: hidden;
-  /* left: 40%; */
   height: 100vh;
   width: 100vw;
   background-color: #1d1d1d;
@@ -89,7 +87,6 @@ const Container = styled.div`
     width: 100vw;
     left: 0;
     font-size: 1.5vh;
-    /* top: 55vh; */
     border-top: 1px solid #909090;
   }
 `;
