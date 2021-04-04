@@ -5,6 +5,13 @@ import ReactTypingEffect from 'react-typing-effect';
 import ProjectComponents from './ProjectComponents';
 import TerminalView from './TerminalView';
 import { SplitPane } from "react-collapse-pane";
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+  root: {
+    overflow: 'visible !important'
+  },
+});
 
 export default function Welcome() {
   const [currentEmailMessage, changeEmailMessage] = useState('If clicked, will copy email to clipboard.');
@@ -12,8 +19,6 @@ export default function Welcome() {
   const [openCode, setOpenCode] = useState(false);
   const [showProjects, setShowProjects] = useState(false);
   const [splitDirection, useSplitDirection] = useState('vertical');
-
-
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -28,11 +33,9 @@ export default function Welcome() {
   }
 
   let handleScreenSize = () => {
-    // useEffect(() => {
-      if (window.innerWidth < 768) {
-        useSplitDirection('horizontal');
-      }
-    // }, [window.innerWidth])
+    if (window.innerWidth < 768) {
+      useSplitDirection('horizontal');
+    }
   }
 
   const HandleEmail = () => {
@@ -45,10 +48,13 @@ export default function Welcome() {
     setShowProjects(!showProjects);
   };
 
+  const classes = useStyles();
+
   return (
     <>
       <TerminalView openCode={openCode} />
-      <SplitPane split={splitDirection}
+      <SplitPane className={classes.root}
+      split={splitDirection}
       resizerOptions={{
           css: {
             width: '50px',

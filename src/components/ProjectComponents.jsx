@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { SplitPane } from "react-collapse-pane";
+// import { SplitPane } from "react-collapse-pane";
 
 export default function ProjectComponents({ openCode, showProjects }) {
   return (
