@@ -21,7 +21,7 @@ export default function ProjectComponents({ openCode, showProjects }) {
           Meditative Musical Drum
           <br />
           <Num>4</Num>
-          &nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;
           <span>
           Minimum viable product for phone app to create self-designed meditative music
           </span>
@@ -41,7 +41,7 @@ export default function ProjectComponents({ openCode, showProjects }) {
           Bitey
           <br />
           <Num>8</Num>
-          &nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;
           <span>
           Single page web app for users to view a product from a popular pet supply website
           </span>
@@ -61,7 +61,7 @@ export default function ProjectComponents({ openCode, showProjects }) {
           Bullseye
           <br />
           <Num>12</Num>
-          &nbsp;
+          &nbsp;&nbsp;
           <span>
           Legacy project independently scaled and deployed using service-oriented architecture
           </span>

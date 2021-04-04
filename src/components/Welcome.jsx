@@ -59,7 +59,10 @@ export default function Welcome() {
           css: {
             width: '50px',
             background: 'rgba(0, 0, 0, 0)',
-          }
+          },
+          hoverCss: {
+            cursor: 'none'
+          },
         }}
         collapseOptions={{
           collapseSize: 50,
@@ -84,7 +87,7 @@ export default function Welcome() {
         </LineOne>
         <Return>
           <Num>4</Num>
-          &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;
           return (
         </Return>
         <EmptyOpenBrackets>
@@ -121,45 +124,45 @@ export default function Welcome() {
             My name is Molly Fuhrman
           </Text>
           <Num>10</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
           Introduction
           <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
         </Introduction>
         <Bio>
           <Num>11</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
           Bio
           <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
           <Text>
             <Num>12</Num>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span>I&apos;m a full-stack software engineer.</span>
           </Text>
           <Num>13</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
           Bio
           <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
         </Bio>
         <Greeting>
           <Num>14</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
           Greeting
           <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
         </Greeting>
         <Contact>
           <Num>15</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
           Contact
           <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
         </Contact>
 
         <Num>16</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <Key>email: </Key>
         <EmailValue onClick={HandleEmail}>
           mollyfuhrman@gmail.com
@@ -172,7 +175,7 @@ export default function Welcome() {
         <br />
 
         <Num>17</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <Key>github: </Key>
         <GitLIValue href="https://github.com/molfuh" target="_blank">
           github.com/molfuh
@@ -183,7 +186,7 @@ export default function Welcome() {
         <br />
 
         <Num>18</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <Key>linkedin: </Key>
         <GitLIValue href="https://www.linkedin.com/in/molly-fuhrman/" target="_blank">
           linkedin.com/in/molly-fuhrman
@@ -194,7 +197,7 @@ export default function Welcome() {
 
         <Contact>
           <Num>19</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
           Contact
           <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
@@ -202,19 +205,19 @@ export default function Welcome() {
 
         <Appreciation>
           <Num>20</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
           Appreciation
           <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
         </Appreciation>
         <Text>
           <Num>21</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           Thank you for stopping by!
         </Text>
         <Appreciation>
           <Num>22</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
           Appreciation
           <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
@@ -223,14 +226,14 @@ export default function Welcome() {
         <br />
         <Text>
           <Num>24</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <RecentProjs>
             {'{/* Click below to see recent projects!  */}'}
           </RecentProjs>
         </Text>
         <Projects>
           <Num>25</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
           Projects
           {' '}
@@ -249,12 +252,12 @@ export default function Welcome() {
         </Projects>
         <EmptyOpenBrackets>
           <Num>26</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;
           {'</>'}
         </EmptyOpenBrackets>
         <Return>
           <Num>27</Num>
-          &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;
           )
         </Return>
         <Parens>
