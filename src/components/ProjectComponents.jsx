@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import myResume from './MollyFuhrmanResume2022.pdf';
 
-export default function ProjectComponents({ openCode }) {
+export default function ProjectComponents({ openCode, showProjects }) {
   return (
     <>
-      <Container openCode={openCode}>
+      <Container openCode={openCode} showProjects={showProjects}>
         <Scroll />
         <Title>
           <Num>1</Num>
@@ -89,21 +89,20 @@ export default function ProjectComponents({ openCode }) {
     </>
   );
 }
-
 const Container = styled.div`
+  z-index: ${({showProjects}) => showProjects ? 2 : 1};
+  padding: 5px;
   position: absolute;
   top: ${(props) => (props.openCode ? '0' : '100vh')};
   overflow: hidden;
-  left: 40%;
   height: 100vh;
-  width: 60%;
+  width: 100vw;
   background-color: #1d1d1d;
   @media (max-width: 768px) {
-    height: 50vh;
+    height: 100vh;
     width: 100vw;
     left: 0;
     font-size: 1.5vh;
-    top: 55vh;
     border-top: 1px solid #909090;
   }
 `;
@@ -111,8 +110,11 @@ const Container = styled.div`
 const Scroll = styled.div`
   color: #909090;
   position: absolute;
-  border: 1px solid #494949;
+  border-left: 1px solid #494949;
   height: 100vh;
+  @media (max-width: 768px) {
+    border: none;
+  }
 `;
 
 const Num = styled.span`
@@ -134,9 +136,56 @@ const MVP = styled.div`
   color: white;
 `;
 
+
+// const Container = styled.div`
+//   z-index: ${({showProjects}) => showProjects ? 2 : 1};
+//   position: absolute;
+//   top: ${(props) => (props.openCode ? '0' : '100vh')};
+//   overflow: hidden;
+//   left: 40%;
+//   height: 100vh;
+//   width: 60%;
+//   background-color: #1d1d1d;
+//   @media (max-width: 768px) {
+//     height: 50vh;
+//     width: 100vw;
+//     left: 0;
+//     font-size: 1.5vh;
+//     top: 55vh;
+//     border-top: 1px solid #909090;
+//   }
+// `;
+
+// const Scroll = styled.div`
+//   color: #909090;
+//   position: absolute;
+//   border: 1px solid #494949;
+//   height: 100vh;
+// `;
+
+// const Num = styled.span`
+//   margin-left: 5px;
+//   color: #909090;
+// `;
+
+// const Title = styled.span`
+//   position: relative;
+//   color: white;
+// `;
+
+// const ProjectLink = styled.a`
+//   color: #d09d81;
+// `;
+
+// const MVP = styled.div`
+//   position: absolute;
+//   color: white;
+// `;
+
 const FEC = styled(MVP)``;
 const SDC = styled(MVP)``;
 
 ProjectComponents.propTypes = {
   openCode: PropTypes.bool.isRequired,
+  showProjects: PropTypes.bool.isRequired
 };
