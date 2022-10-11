@@ -18,17 +18,17 @@ export default function ProjectComponents({ openCode }) {
         <MVP>
           <Num>3</Num>
           &nbsp;&nbsp;
-          Meditative Musical Drum
+          INT Magazine
           <br />
           <Num>4</Num>
-          &nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;
           <span>
-          Minimum viable product for phone app to create self-designed meditative music
+          Online magazine highlighting creative themes and topics (currently in development)
           </span>
           <br />
           <Num>5</Num>
         &nbsp;&nbsp;&nbsp;
-          <ProjectLink href="https://imgur.com/a/PLkZOSH" target="_blank">Click here to view!</ProjectLink>
+           <ProjectLink href="http://www.intmagazine.com/" target="_blank">Click here to view!</ProjectLink>
         </MVP>
         <br />
         <br />
@@ -38,23 +38,23 @@ export default function ProjectComponents({ openCode }) {
         <FEC>
           <Num>7</Num>
           &nbsp;&nbsp;
-          Bitey
+          Meditative Musical Drum
           <br />
           <Num>8</Num>
-          &nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;
           <span>
-          Single page web app for users to view a product from a popular pet supply website
+          Minimum viable product for phone app to create self-designed meditative music (mobile only)
           </span>
           <br />
           <Num>9</Num>
         &nbsp;&nbsp;&nbsp;
-          <ProjectLink href="https://imgur.com/a/Ir0r0fK" target="_blank">Click here to view!</ProjectLink>
+          <ProjectLink href="https://meditativemusicaldrum.netlify.app/" target="_blank">Click here to view!</ProjectLink>
         </FEC>
         <br />
         <br />
         <br />
         {screen.width < 768 ? <br /> : <></>}
-        <Num>10</Num>
+        {/* <Num>10</Num>
         <SDC>
           <Num>11</Num>
           &nbsp;
@@ -67,7 +67,7 @@ export default function ProjectComponents({ openCode }) {
           </span>
           <br />
           <Num>13</Num>
-        </SDC>
+        </SDC> */}
       </Container>
     </>
   );
