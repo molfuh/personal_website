@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import myResume from './MollyFuhrmanResume2022.pdf';
 
 export default function ProjectComponents({ openCode }) {
   return (
@@ -23,51 +24,67 @@ export default function ProjectComponents({ openCode }) {
           <Num>4</Num>
           &nbsp;&nbsp;&nbsp;
           <span>
-          Online magazine highlighting creative themes and topics (currently in development)
+          Online magazine highlighting creative themes and topics
           </span>
           <br />
           <Num>5</Num>
+        &nbsp;&nbsp;
+        (Currently in development)
+        <br />
+        <Num>6</Num>
         &nbsp;&nbsp;&nbsp;
            <ProjectLink href="http://www.intmagazine.com/" target="_blank">Click here to view!</ProjectLink>
         </MVP>
         <br />
         <br />
         <br />
-        <Num>6</Num>
+        <br />
+        <Num>7</Num>
         <br />
         <FEC>
-          <Num>7</Num>
+          <Num>8</Num>
           &nbsp;&nbsp;
           Meditative Musical Drum
           <br />
-          <Num>8</Num>
+          <Num>9</Num>
           &nbsp;&nbsp;&nbsp;
           <span>
-          Minimum viable product for phone app to create self-designed meditative music (mobile only)
+          Minimum viable product for phone app to create self-designed meditative music
           </span>
           <br />
-          <Num>9</Num>
-        &nbsp;&nbsp;&nbsp;
+          <Num>10</Num>
+        &nbsp;
+        (Currently mobile only)
+        <br/>
+        <Num>11</Num>
+        &nbsp;&nbsp;
           <ProjectLink href="https://meditativemusicaldrum.netlify.app/" target="_blank">Click here to view!</ProjectLink>
         </FEC>
         <br />
         <br />
         <br />
+        <br/>
         {screen.width < 768 ? <br /> : <></>}
-        {/* <Num>10</Num>
         <SDC>
-          <Num>11</Num>
-          &nbsp;
-          Bullseye
-          <br />
           <Num>12</Num>
-          &nbsp;
+           &nbsp;&nbsp;
+          <br/>
+          <Title>
+          <Num>13</Num>
+           &nbsp;&nbsp;
+          {' // Resume ' }
+          <br/>
+          <Num>14</Num>
+          <br/>
+        </Title>
+          <Num>15</Num>
+          &nbsp;&nbsp;
           <span>
-          Legacy project independently scaled and deployed using service-oriented architecture
+          <ProjectLink href={myResume} target="_blank">Click here to view!</ProjectLink>
           </span>
           <br />
-          <Num>13</Num>
-        </SDC> */}
+          <Num>16</Num>
+        </SDC>
       </Container>
     </>
   );
