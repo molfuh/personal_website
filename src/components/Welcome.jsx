@@ -68,211 +68,205 @@ export default function Welcome() {
           collapseSize: 50,
         }}
         >
-      <StyledContainer showProjects={showProjects}>
-        <Title>
-          <Num>1</Num>
-          &nbsp;
-          // Molly Fuhrman - Web Developer
-        </Title>
-        <Num>2</Num>
-        <LineOne>
-          <Num>3</Num>
-          &nbsp;
-          <ExportDefault>export default </ExportDefault>
-          <Function>function </Function>
-          <Hello>
-            Hello
-            <Parens>{'() {'}</Parens>
-          </Hello>
-        </LineOne>
-        <Return>
-          <Num>4</Num>
-          &nbsp;&nbsp;
-          return (
-        </Return>
-        <EmptyOpenBrackets>
-          <Num>5</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          {'<>'}
-        </EmptyOpenBrackets>
-        <Greeting>
-          <Num>6</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
-          Greeting
-          <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-        </Greeting>
-        <HelloType>
-          <Num>7</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <ReactTypingEffect
-            text={['Hello!']}
-            speed={[160]}
-            typingDelay={[1500]}
-            eraseDelay={[1500]}
-          />
-        </HelloType>
-        <Introduction>
-          <Num>8</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
-          Introduction
-          <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-          <Text>
-            <Num>9</Num>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            My name is Molly Fuhrman
-          </Text>
-          <Num>10</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
-          Introduction
-          <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-        </Introduction>
-        <Bio>
-          <Num>11</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
-          Bio
-          <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-          <Text>
-            <Num>12</Num>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span>I&apos;m a full-stack software engineer.</span>
-          </Text>
-          <Num>13</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
-          Bio
-          <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-        </Bio>
-        <Greeting>
-          <Num>14</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
-          Greeting
-          <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-        </Greeting>
-        <Contact>
-          <Num>15</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
-          Contact
-          <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-        </Contact>
+      <ListContainer>
+        <StyledContainer showProjects={showProjects}>
+          <Num>
+            <Title>// Molly Fuhrman - Web Developer</Title>
+          </Num>
+          <Num/>
+          <Num>
+            <ExportDefault>export default </ExportDefault>
+            <Function>function </Function>
+            <Hello>
+              Hello<Parens>{'() {'}</Parens>
+            </Hello>
+          </Num>
+          <Num>
+            <Return>return (</Return>
+          </Num>
+          <Num>
+            <StandaloneBrackets>
+            {'<>'}
+            </StandaloneBrackets>
+          </Num>
+          <Num>
+            <Greeting>
+              <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
+              Greeting
+              <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+            </Greeting>
+          </Num>
+          <Num>
+            <HelloType>
+              <ReactTypingEffect
+                text={['Hello!']}
+                speed={[160]}
+                typingDelay={[1500]}
+                eraseDelay={[1500]}
+                />
+            </HelloType>
+          </Num>
+          <Num>
+            <Introduction>
+              <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
+              Introduction
+              <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+            </Introduction>
+          </Num>
+          <Num>
+            <Text>
+              My name is Molly Fuhrman
+            </Text>
+          </Num>
+          <Num>
+            <Introduction>
+              <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
+              Introduction
+              <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+            </Introduction>
+          </Num>
+          <Num>
+            <Bio>
+              <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
+              Bio
+              <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+            </Bio>
+          </Num>
+          <Num>
+            <Text>
+              <span>I&apos;m a full-stack software engineer.</span>
+            </Text>
+          </Num>
+          <Num>
+            <Bio>
+            <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
+            Bio
+            <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+            </Bio>
+          </Num>
+          <Num>
+            <Greeting>
+              <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
+              Greeting
+              <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+            </Greeting>
+          </Num>
+          <Num>
+            <Contact>
+            <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
+            Contact
+            <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+            </Contact>
+          </Num>
+          <Num>
+            <Key>email: </Key>
+            <EmailValue onClick={HandleEmail}>
+              mollyfuhrman@gmail.com
+              <EmailDropDownContent>
+                <span className={emailClicked && 'clicked'}>
+                  {currentEmailMessage}
+                </span>
+              </EmailDropDownContent>
+            </EmailValue>
+          </Num>
+        <Num>
+          <Key>github: </Key>
+          <GitLIValue href="https://github.com/molfuh" target="_blank">
+            github.com/molfuh
+            <EmailDropDownContent>
+              If clicked, will open GitHub in new tab.
+            </EmailDropDownContent>
+          </GitLIValue>
+        </Num>
 
-        <Num>16</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <Key>email: </Key>
-        <EmailValue onClick={HandleEmail}>
-          mollyfuhrman@gmail.com
-          <EmailDropDownContent>
-            <span className={emailClicked && 'clicked'}>
-              {currentEmailMessage}
-            </span>
-          </EmailDropDownContent>
-        </EmailValue>
-        <br />
-
-        <Num>17</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <Key>github: </Key>
-        <GitLIValue href="https://github.com/molfuh" target="_blank">
-          github.com/molfuh
-          <EmailDropDownContent>
-            If clicked, will open GitHub in new tab.
-          </EmailDropDownContent>
-        </GitLIValue>
-        <br />
-
-        <Num>18</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <Key>linkedin: </Key>
-        <GitLIValue href="https://www.linkedin.com/in/molly-fuhrman/" target="_blank">
-          linkedin.com/in/molly-fuhrman
-          <EmailDropDownContent>
-            If clicked, will open LinkedIn in new tab.
-          </EmailDropDownContent>
-        </GitLIValue>
-
-        <Contact>
-          <Num>19</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
-          Contact
-          <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-        </Contact>
-
-        <Appreciation>
-          <Num>20</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
-          Appreciation
-          <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-        </Appreciation>
-        <Text>
-          <Num>21</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          Thank you for stopping by!
-        </Text>
-        <Appreciation>
-          <Num>22</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
-          Appreciation
-          <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-        </Appreciation>
-        <Num>23</Num>
-        <br />
-        <Text>
-          <Num>24</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Num>
+          <Key>linkedin: </Key>
+          <GitLIValue href="https://www.linkedin.com/in/molly-fuhrman/" target="_blank">
+            linkedin.com/in/molly-fuhrman
+            <EmailDropDownContent>
+              If clicked, will open LinkedIn in new tab.
+            </EmailDropDownContent>
+          </GitLIValue>
+        </Num>
+        <Num>
+          <Contact>
+            <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
+            Contact
+            <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+          </Contact>
+        </Num>
+        <Num>
+          <Appreciation>
+            <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
+            Appreciation
+            <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+          </Appreciation>
+        </Num>
+        <Num>
+          <AppreciationText>
+            Thank you for stopping by!
+          </AppreciationText>
+        </Num>
+        <Num>
+          <Appreciation>
+            <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
+            Appreciation
+            <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+          </Appreciation>
+        </Num>
+        <Num/>
+        <Num>
           <RecentProjs>
             {'{/* Click below to see recent projects!  */}'}
           </RecentProjs>
-        </Text>
-        <Projects>
-          <Num>25</Num>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
-          Projects
-          {' '}
-          {' '}
-          <Function onClick={HandleProjects}>
-            <Hover>
-              onClick=
-              {'{'}
-              <Hello>
-                openProjects
-              </Hello>
-              {'}'}
-            </Hover>
-          </Function>
-          <EmptyOpenBrackets>{' />'}</EmptyOpenBrackets>
-        </Projects>
-        <EmptyOpenBrackets>
-          <Num>26</Num>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          {'</>'}
-        </EmptyOpenBrackets>
-        <Return>
-          <Num>27</Num>
-          &nbsp;&nbsp;
-          )
-        </Return>
-        <Parens>
-          <Num>28</Num>
-          &nbsp;
-          {'}'}
-        </Parens>
-        <br />
-        <Num>29</Num>
+        </Num>
+        <Num>
+          <Projects>
+            <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
+              <span style={{marginRight:'7px'}}>Projects</span>
+              <Function onClick={HandleProjects}>
+                <Hover>
+                  onClick=
+                  {'{'}
+                  <Hello>
+                    openProjects
+                  </Hello>
+                  {'}'}
+                </Hover>
+              </Function>
+            <EmptyOpenBrackets>{' />'}</EmptyOpenBrackets>
+          </Projects>
+        </Num>
+        <Num>
+          <StandaloneBrackets>
+            {'</>'}
+          </StandaloneBrackets>
+        </Num>
+        <Num>
+          <Return>
+            )
+          </Return>
+        </Num>
+        <Num>
+          <Parens>
+            {'}'}
+          </Parens>
+        </Num>
+        <Num/>
       </StyledContainer>
+      </ListContainer>
       {showProjects ? <ProjectComponents openCode={openCode} showProjects={showProjects} /> : <NoProjects></NoProjects>}
       </SplitPane>
     </>
   );
 }
+
+const ListContainer = styled.ol`
+counter-reset: item;
+margin-left: 0;
+padding-left: 0;
+margin-top: 0;
+`;
 
 const StyledContainer = styled.main`
   z-index: ${({showProjects}) => showProjects ? 1 : 2};
@@ -293,23 +287,26 @@ const NoProjects = styled.div`
   width: 100vw;
 `;
 
-const Num = styled.span`
+const Num = styled.li`
   color: #909090;
-  position: relative;
-  @media (max-width: 768px) {
-    font-size: 1.5vh;
+  display: -webkit-box;
+  margin-left: 2.5em;
+  text-overflow: clip;
+  white-space: nowrap;
+  &:before {
+      display: inline-block;
+      content: counter(item) "";
+      counter-increment: item;
+      width: 2em;
+      margin-left: -2em;
   }
-`;
+  `;
 
 const Title = styled.div`
   position: relative;
   color: white;
-  font-size: 2.1vh;
 `;
 
-const LineOne = styled.div`
-  position: relative;
-`;
 const ExportDefault = styled.span`
   color: #dc7bdf;
 `;
@@ -325,8 +322,8 @@ const Parens = styled.span`
 `;
 
 const Return = styled.div`
-  position: relative;
   color: #dc7bdf;
+  margin-left: 1.5em;
 `;
 
 const EmptyOpenBrackets = styled.span`
@@ -334,26 +331,43 @@ const EmptyOpenBrackets = styled.span`
   color: #8a8a8a;
 `;
 
+const StandaloneBrackets = styled(EmptyOpenBrackets)`
+  margin-left: 3em;
+`;
+
 const Greeting = styled.div`
   color: #65cfb8;
+  margin-left: 4.5em;
 `;
 
 const HelloType = styled.div`
   position: relative;
   color: white;
+  margin-left: 6em;
 `;
 
-const Text = styled(HelloType)``;
+const Text = styled(HelloType)`
+margin-left: 9em;
+`;
+
+const AppreciationText = styled(Text)`
+  margin-left: 6em;
+`;
 
 const Introduction = styled(Greeting)`
+  margin-left: 7.5em;
 `;
 
-const Bio = styled(Greeting)``;
-const Contact = styled(Greeting)``;
+const Bio = styled(Greeting)`
+  margin-left: 7.5em;  
+`;
+const Contact = styled(Greeting)`
+`;
 
 const Key = styled.span`
   position: relative;
   color: white;
+  margin-left: 6em;
 `;
 
 const EmailValue = styled.span`
@@ -418,4 +432,5 @@ const Hover = styled.span`
 
 const RecentProjs = styled.span`
   color: #6f9b56;
+  margin-left: 4.5em;
 `;
