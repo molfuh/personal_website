@@ -7,9 +7,9 @@ export default function TerminalView({ openCode }) {
   return (
     <OpeningTerminal openCode={openCode}>
       <Terminal>
+        <span>
         Welcome to: Molly_Fuhrman_Website $
-        {' '}
-        {' '}
+        </span>
         <ReactTypingEffect
           text={['code .']}
           speed={[150]}
@@ -30,12 +30,15 @@ const OpeningTerminal = styled.div`
 
 const Terminal = styled.div`
   position: absolute;
-  height: 30vh;
-  width: 30vw;
+  height: 35vh;
+  width: 40vw;
   border: 1px solid black;
   padding: 10px;
   @media (max-width: 768px) {
-    width: 70vw;
+    width: 75vw;
+  }
+  span {
+    padding-right: 0.5em;
   }
 `;
 
