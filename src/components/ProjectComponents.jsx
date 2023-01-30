@@ -20,15 +20,17 @@ const Container = styled.div`
   padding: 5px;
   position: absolute;
   top: ${(props) => (props.openCode ? '0' : '100vh')};
-  overflow: hidden !important;
+  // overflow: hidden !important;
   height: 100vh;
   width: 100vw;
   background-color: #1d1d1d;
   @media (max-width: 768px) {
+    font-size: 1.5vh;
+  }
+  @media (max-width: 1200px) {
     height: 100vh;
     width: 100vw;
     left: 0;
-    font-size: 1.5vh;
     border-top: 1px solid #909090;
   }
 `;

@@ -16,6 +16,9 @@ const Num = styled.li`
       width: 2em;
       margin-left: -2em;
   }
+  @media (max-width: 768px) {
+    white-space: break-spaces;
+  }
   span {
     color: white;
   }

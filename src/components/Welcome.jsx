@@ -9,7 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   root: {
-    overflow: 'visible'
+    overflow: 'visible !important'
   },
 });
 
@@ -33,7 +33,7 @@ export default function Welcome() {
   }
 
   let handleScreenSize = () => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 1200) {
       useSplitDirection('horizontal');
     }
   }
@@ -58,7 +58,7 @@ export default function Welcome() {
       resizerOptions={{
           css: {
             width: '50px',
-            background: 'rgba(0, 0, 0, 0)',
+            background: 'rgba(0, 0, 0, 0)'
           },
           hoverCss: {
             cursor: 'none'
@@ -285,6 +285,7 @@ const NoProjects = styled.div`
   background-color: #1d1d1d;
   height: 100vh;
   width: 100vw;
+  display: ${({showProjects}) => showProjects ? 'auto' : 'none'};
 `;
 
 const Num = styled.li`
@@ -299,6 +300,9 @@ const Num = styled.li`
       counter-increment: item;
       width: 2em;
       margin-left: -2em;
+  }
+  @media (max-width: 768px) {
+    white-space: break-spaces;
   }
   `;
 
