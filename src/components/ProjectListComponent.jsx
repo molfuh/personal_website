@@ -28,13 +28,13 @@ const Num = styled.li`
   color: #d09d81;
 `;
 
-let projectTitles=['INT Magazine','Meditative Musical Drum','Positively Tedious','Resume','title 4','title 5'];
+let projectTitles=['INT Magazine','Meditative Musical Drum','Positively TEDIOUS','Resume','title 4','title 5'];
 let projectTitlesList=[];
 projectTitles.forEach((title,index)=>{
     projectTitlesList.push( <Num key={index}><span>{title}</span></Num>)
 })
 let projectDescription=['Online magazine highlighting creative themes and topics',
-'Minimum viable product for phone app to create self-designed meditative music','Portfolio website for new musician TEDIOUS to showcase important artist information','(Includes hidden surprise behind draggable logo!)','description 4','description 5'];
+'Minimum viable product for phone app to create self-designed meditative music (mobile only)','Portfolio website for new musician TEDIOUS to showcase important artist information','(Includes hidden surprise behind draggable logo!)','description 4','description 5'];
 let projectDescriptionList=[];
 projectDescription.forEach((description,index)=>{
     projectDescriptionList.push( <Num key={index}><span>{description}</span></Num>)

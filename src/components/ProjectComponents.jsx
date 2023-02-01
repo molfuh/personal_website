@@ -19,8 +19,7 @@ const Container = styled.div`
   z-index: ${({showProjects}) => showProjects ? 2 : 1};
   padding: 5px;
   position: absolute;
-  top: ${(props) => (props.openCode ? '0' : '100vh')};
-  // overflow: hidden !important;
+  top: ${(props) => (props.openCode ? '50px' : '100vh')};
   height: 100vh;
   width: 100vw;
   background-color: #1d1d1d;
