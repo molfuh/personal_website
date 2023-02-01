@@ -31,10 +31,10 @@ const OpeningTerminal = styled.div`
 const Terminal = styled.div`
   position: absolute;
   height: 35vh;
-  width: 50vw;
+  width: 450px;
   border: 1px solid black;
   padding: 10px;
-  @media (max-width: 768px) {
+  @media (max-width: 659px) {
     width: 70vw;
   }
   span {
