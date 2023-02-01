@@ -19,18 +19,20 @@ const Container = styled.div`
   z-index: ${({showProjects}) => showProjects ? 2 : 1};
   padding: 5px;
   position: absolute;
-  top: ${(props) => (props.openCode ? '50px' : '100vh')};
+  // top: ${({showProjects}) => showProjects ? '0' : '50px'};
   height: 100vh;
   width: 100vw;
   background-color: #1d1d1d;
   @media (max-width: 768px) {
     font-size: 1.5vh;
+    top: 15% !important;
   }
   @media (max-width: 1200px) {
     height: 100vh;
     width: 100vw;
     left: 0;
     border-top: 1px solid #909090;
+    top: 50%;
   }
 `;
 
