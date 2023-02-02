@@ -6,12 +6,26 @@ import ProjectComponents from './ProjectComponents';
 import TerminalView from './TerminalView';
 import { SplitPane } from "react-collapse-pane";
 import { makeStyles } from '@material-ui/core/styles';
+// import '../index.css';
 
-const useStyles = makeStyles({
-  root: {
-    overflow: 'visible !important'
-  },
-});
+// const useStyles = makeStyles({
+//   .Pane.horizontal:nth-child(3) {
+//     /* top: 50px; */
+//     overflow: visible !Important;
+//     /* flex-basis: 19vh !important; */
+//     /* flex: 10; */
+//     position: absolute;
+//     z-index: 1;
+//     /* top: 68%; */
+//     bottom: 30%;
+// }
+//   // root: {
+//   //   overflow: 'visible !important'
+//   //   // width: '100vw',
+//   //   // height: '100vh',
+//   //   // overflow: 'hidden !important'
+//   // },
+// });
 
 export default function Welcome() {
   const [currentEmailMessage, changeEmailMessage] = useState('If clicked, will copy email to clipboard.');
@@ -19,6 +33,7 @@ export default function Welcome() {
   const [openCode, setOpenCode] = useState(false);
   const [showProjects, setShowProjects] = useState(false);
   const [splitDirection, useSplitDirection] = useState('vertical');
+  // const [collapse, useCollapseDirection] = useState('right');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -36,6 +51,9 @@ export default function Welcome() {
     if (window.innerWidth < 1200) {
       useSplitDirection('horizontal');
     }
+    // if (window.innerWidth < 1200) {
+    //   useCollapseDirection('down');
+    // }
   }
 
   const HandleEmail = () => {
@@ -48,218 +66,242 @@ export default function Welcome() {
     setShowProjects(!showProjects);
   };
 
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
     <>
       <TerminalView openCode={openCode} />
-      <SplitPane className={classes.root}
-      split={splitDirection}
-      resizerOptions={{
-          css: {
-            width: '50px',
-            background: 'rgba(0, 0, 0, 0)'
-          },
-          hoverCss: {
-            cursor: 'none'
-          },
-        }}
-        collapseOptions={{
-          collapseSize: 50,
-        }}
-        >
-      <ListContainer>
-        <StyledContainer showProjects={showProjects}>
-          <Num>
-            <Title>// Molly Fuhrman - Web Developer</Title>
-          </Num>
-          <Num/>
-          <Num>
-            <ExportDefault>export default </ExportDefault>
-            <Function>function </Function>
-            <Hello>
-              Hello<Parens>{'() {'}</Parens>
-            </Hello>
-          </Num>
-          <Num>
-            <Return>return (</Return>
-          </Num>
-          <Num>
-            <StandaloneBrackets>
-            {'<>'}
-            </StandaloneBrackets>
-          </Num>
-          <Num>
-            <Greeting>
-              <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
-              Greeting
-              <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-            </Greeting>
-          </Num>
-          <Num>
-            <HelloType>
-              <ReactTypingEffect
-                text={['Hello!']}
-                speed={[160]}
-                typingDelay={[1500]}
-                eraseDelay={[1500]}
-                />
-            </HelloType>
-          </Num>
-          <Num>
-            <Introduction>
-              <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
-              Introduction
-              <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-            </Introduction>
-          </Num>
-          <Num>
-            <Text>
-              My name is Molly Fuhrman
-            </Text>
-          </Num>
-          <Num>
-            <Introduction>
+      <SplitPaneWrapper openCode={openCode}>
+      {/* <SplitPane className={classes.root} */}
+      <SplitPane 
+        minSizes={[200, 5]}
+        initialSizes={[3, 1]}
+        split={splitDirection}
+        // collapseDirection={collapse}
+        resizerOptions={{
+            css: {
+              width: '50px',
+              background: 'rgba(0, 0, 0, 0)'
+            },
+            hoverCss: {
+              cursor: 'none'
+            },
+              // grabberSize: 10
+          }}
+          // collapse={{
+          //   collapseTransitionTimeout: 500,
+          //   'grow'
+          //   collapse,
+          //   0,
+          // }}
+          // collapseOptions={{
+          //   collapsedSize: 0,
+          //   collapseTransitionTimeout: 500,
+          //   buttonTransition: 'grow',
+          //   collapseDirection: {collapse}
+          // overlayCss: {
+          //   backgroundColor: 'black'
+          // }
+          //   // minSize: 0
+          // }}
+          >
+        <ListContainer>
+          <StyledContainer showProjects={showProjects}>
+            <Num>
+              <Title>// Molly Fuhrman - Web Developer</Title>
+            </Num>
+            <Num/>
+            <Num>
+              <ExportDefault>export default </ExportDefault>
+              <Function>function </Function>
+              <Hello>
+                Hello<Parens>{'() {'}</Parens>
+              </Hello>
+            </Num>
+            <Num>
+              <Return>return (</Return>
+            </Num>
+            <Num>
+              <StandaloneBrackets>
+              {'<>'}
+              </StandaloneBrackets>
+            </Num>
+            <Num>
+              <Greeting>
+                <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
+                Greeting
+                <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+              </Greeting>
+            </Num>
+            <Num>
+              <HelloType>
+                <ReactTypingEffect
+                  text={['Hello!']}
+                  speed={[160]}
+                  typingDelay={[1500]}
+                  eraseDelay={[1500]}
+                  />
+              </HelloType>
+            </Num>
+            <Num>
+              <Introduction>
+                <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
+                Introduction
+                <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+              </Introduction>
+            </Num>
+            <Num>
+              <Text>
+                My name is Molly Fuhrman
+              </Text>
+            </Num>
+            <Num>
+              <Introduction>
+                <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
+                Introduction
+                <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+              </Introduction>
+            </Num>
+            <Num>
+              <Bio>
+                <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
+                Bio
+                <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+              </Bio>
+            </Num>
+            <Num>
+              <Text>
+                <span>I&apos;m a full-stack software engineer.</span>
+              </Text>
+            </Num>
+            <Num>
+              <Bio>
               <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
-              Introduction
-              <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-            </Introduction>
-          </Num>
-          <Num>
-            <Bio>
-              <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
               Bio
               <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-            </Bio>
-          </Num>
-          <Num>
-            <Text>
-              <span>I&apos;m a full-stack software engineer.</span>
-            </Text>
-          </Num>
-          <Num>
-            <Bio>
-            <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
-            Bio
-            <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-            </Bio>
-          </Num>
-          <Num>
-            <Greeting>
-              <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
-              Greeting
+              </Bio>
+            </Num>
+            <Num>
+              <Greeting>
+                <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
+                Greeting
+                <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+              </Greeting>
+            </Num>
+            <Num>
+              <Contact>
+              <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
+              Contact
               <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-            </Greeting>
-          </Num>
-          <Num>
-            <Contact>
-            <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
-            Contact
-            <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-            </Contact>
-          </Num>
-          <Num>
-            <Key>email: </Key>
-            <EmailValue onClick={HandleEmail}>
-              mollyfuhrman@gmail.com
-              <EmailDropDownContent>
-                <span className={emailClicked && 'clicked'}>
-                  {currentEmailMessage}
-                </span>
-              </EmailDropDownContent>
-            </EmailValue>
-          </Num>
-        <Num>
-          <Key>github: </Key>
-          <GitLIValue href="https://github.com/molfuh" target="_blank">
-            github.com/molfuh
-            <EmailDropDownContent>
-              If clicked, will open GitHub in new tab.
-            </EmailDropDownContent>
-          </GitLIValue>
-        </Num>
-
-        <Num>
-          <Key>linkedin: </Key>
-          <GitLIValue href="https://www.linkedin.com/in/molly-fuhrman/" target="_blank">
-            linkedin.com/in/molly-fuhrman
-            <EmailDropDownContent>
-              If clicked, will open LinkedIn in new tab.
-            </EmailDropDownContent>
-          </GitLIValue>
-        </Num>
-        <Num>
-          <Contact>
-            <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
-            Contact
-            <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-          </Contact>
-        </Num>
-        <Num>
-          <Appreciation>
-            <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
-            Appreciation
-            <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-          </Appreciation>
-        </Num>
-        <Num>
-          <AppreciationText>
-            Thank you for stopping by!
-          </AppreciationText>
-        </Num>
-        <Num>
-          <Appreciation>
-            <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
-            Appreciation
-            <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
-          </Appreciation>
-        </Num>
-        <Num/>
-        <Num>
-          <RecentProjs>
-            {'{/* Click below to see recent projects!  */}'}
-          </RecentProjs>
-        </Num>
-        <Num>
-          <Projects>
-            <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
-              <span style={{marginRight:'7px'}}>Projects</span>
-              <Function onClick={HandleProjects}>
-                <Hover>
-                  onClick=
-                  {'{'}
-                  <Hello>
-                    openProjects
-                  </Hello>
-                  {'}'}
-                </Hover>
-              </Function>
-            <EmptyOpenBrackets>{' />'}</EmptyOpenBrackets>
-          </Projects>
-        </Num>
-        <Num>
-          <StandaloneBrackets>
-            {'</>'}
-          </StandaloneBrackets>
-        </Num>
-        <Num>
-          <Return>
-            )
-          </Return>
-        </Num>
-        <Num>
-          <Parens>
-            {'}'}
-          </Parens>
-        </Num>
-        <Num/>
-      </StyledContainer>
-      </ListContainer>
+              </Contact>
+            </Num>
+            <Num>
+              <Key>email: </Key>
+              <EmailValue onClick={HandleEmail} tabIndex="0">
+                mollyfuhrman@gmail.com
+                <EmailDropDownContent>
+                  <span className={emailClicked && 'clicked'}>
+                    {currentEmailMessage}
+                  </span>
+                </EmailDropDownContent>
+              </EmailValue>
+            </Num>
+            <Num>
+              <Key>github: </Key>
+              <GitLIValue href="https://github.com/molfuh" target="_blank">
+                github.com/molfuh
+                <EmailDropDownContent>
+                  If clicked, will open GitHub in new tab.
+                </EmailDropDownContent>
+              </GitLIValue>
+            </Num>
+            <Num>
+              <Key>linkedin: </Key>
+              <GitLIValue href="https://www.linkedin.com/in/molly-fuhrman/" target="_blank">
+                linkedin.com/in/molly-fuhrman
+                <EmailDropDownContent>
+                  If clicked, will open LinkedIn in new tab.
+                </EmailDropDownContent>
+              </GitLIValue>
+            </Num>
+            <Num>
+              <Contact>
+                <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
+                Contact
+                <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+              </Contact>
+            </Num>
+            <Num>
+              <Appreciation>
+                <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
+                Appreciation
+                <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+              </Appreciation>
+            </Num>
+            <Num>
+              <AppreciationText>
+                Thank you for stopping by!
+              </AppreciationText>
+            </Num>
+            <Num>
+              <Appreciation>
+                <EmptyOpenBrackets>{'</'}</EmptyOpenBrackets>
+                Appreciation
+                <EmptyOpenBrackets>{'>'}</EmptyOpenBrackets>
+              </Appreciation>
+            </Num>
+            <Num/>
+            <Num>
+              <RecentProjs>
+                {'{/* Click below to see recent projects!  */}'}
+              </RecentProjs>
+            </Num>
+            <Num>
+              <Projects>
+                <EmptyOpenBrackets>{'<'}</EmptyOpenBrackets>
+                  <span style={{marginRight:'7px'}}>Projects</span>
+                  <Function onClick={HandleProjects}>
+                    <Hover tabIndex="0">
+                      onClick=
+                      {'{'}
+                      <Hello>
+                        openProjects
+                      </Hello>
+                      {'}'}
+                    </Hover>
+                  </Function>
+                <EmptyOpenBrackets>{' />'}</EmptyOpenBrackets>
+              </Projects>
+            </Num>
+            <Num>
+              <StandaloneBrackets>
+                {'</>'}
+              </StandaloneBrackets>
+            </Num>
+            <Num>
+              <Return>
+                )
+              </Return>
+            </Num>
+            <Num>
+              <Parens>
+                {'}'}
+              </Parens>
+            </Num>
+            <Num/>
+          </StyledContainer>
+        </ListContainer>
       {showProjects ? <ProjectComponents openCode={openCode} showProjects={showProjects} /> : <NoProjects></NoProjects>}
       </SplitPane>
+      </SplitPaneWrapper>
     </>
   );
 }
+
+const SplitPaneWrapper = styled.div`
+  position: ${({openCode}) => openCode ? 'static' : 'absolute'};
+  display: flex;
+`;
 
 const ListContainer = styled.ol`
 counter-reset: item;
@@ -269,11 +311,11 @@ margin-top: 0;
 `;
 
 const StyledContainer = styled.main`
-  z-index: ${({showProjects}) => showProjects ? 1 : 2};
+  z-index: ${({showProjects}) => showProjects ? 0 : 1};
   padding: 10px;
   background-color: #1d1d1d;
   height: 100vh;
-  width: 100vw;
+  // width: 100vw;
   position: absolute;
   @media (max-width: 768px) {
     font-size: 1.5vh;
@@ -285,7 +327,9 @@ const NoProjects = styled.div`
   background-color: #1d1d1d;
   height: 100vh;
   width: 100vw;
-  display: ${({showProjects}) => showProjects ? 'auto' : 'none'};
+  // top: 50px;
+  // z-index: -1;
+  // display: ${({showProjects}) => showProjects ? 'auto' : 'none'};
 `;
 
 const Num = styled.li`
@@ -378,7 +422,7 @@ const EmailValue = styled.span`
   color: white;
   position: relative;
   display: inline-block;
-  :hover {
+  :hover, :focus {
     color: #ff9800;
     cursor: pointer;
   }
@@ -388,7 +432,7 @@ const GitLIValue = styled.a`
   color: white;
   position: relative;
   display: inline-block;
-  :hover {
+  :hover, :focus {
     color: #4FC1FF;
     cursor: pointer;
   }
@@ -403,7 +447,8 @@ const EmailDropDownContent = styled.div`
   border: 1px solid #4e4e4e;
   padding: 12px 16px;
   z-index: 3;
-  ${EmailValue}:hover & {
+  ${EmailValue}:hover &,
+  ${EmailValue}:focus & {
     display: block;
     top: -47px;
     color: #589bc8;
@@ -414,7 +459,8 @@ const EmailDropDownContent = styled.div`
       color: #4CAF50;
     }
   }
-  ${GitLIValue}:hover & {
+  ${GitLIValue}:hover &,
+  ${GitLIValue}:focus & {
     display: block;
     top: -47px;
     color: #589bc8;

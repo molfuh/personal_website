@@ -26,6 +26,10 @@ const Num = styled.li`
 
   const ProjectLink = styled.a`
   color: #d09d81;
+  :hover {
+    color: #4487c7;
+    cursor: pointer;
+  }
 `;
 
 let projectTitles=['INT Magazine','Meditative Musical Drum','Positively TEDIOUS','Resume','title 4','title 5'];
@@ -65,7 +69,6 @@ function ProjectListComponent() {
         {projectTitlesList[1]}
         {projectDescriptionList[1]}
         {projectURLList[1]}
-        <Num/>
         <Num/>
         {projectTitlesList[3]}
         {projectURLList[3]}
