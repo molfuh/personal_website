@@ -73,7 +73,7 @@ export default function Welcome() {
       <TerminalView openCode={openCode} />
       <SplitPaneWrapper openCode={openCode}>
       {/* <SplitPane className={classes.root} */}
-      <SplitPane 
+      <SplitPane
         minSizes={[200, 5]}
         initialSizes={[3, 1]}
         split={splitDirection}
@@ -407,7 +407,7 @@ const Introduction = styled(Greeting)`
 `;
 
 const Bio = styled(Greeting)`
-  margin-left: 7.5em;  
+  margin-left: 7.5em;
 `;
 const Contact = styled(Greeting)`
 `;
@@ -452,7 +452,6 @@ const EmailDropDownContent = styled.div`
     display: block;
     top: -47px;
     color: #589bc8;
-    width: 350px;
     font-size: 1.7vh;
     padding-left: 20px;
     .clicked {
@@ -464,7 +463,6 @@ const EmailDropDownContent = styled.div`
     display: block;
     top: -47px;
     color: #589bc8;
-    width: 350px;
     font-size: 1.7vh;
     padding-left: 20px;
   }

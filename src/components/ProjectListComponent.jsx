@@ -43,7 +43,7 @@ let projectDescriptionList=[];
 projectDescription.forEach((description,index)=>{
     projectDescriptionList.push( <Num key={index}><span>{description}</span></Num>)
 })
-let projectURL=['https://www.intmagazine.com/',
+let projectURL=['https://intmagazine.netlify.app/',
 'https://meditativemusicaldrum.netlify.app/','https://positivelytedious.com/',Resume,'URL 4','URL 5'];
 let projectURLList=[];
 projectURL.forEach((URL,index)=>{
